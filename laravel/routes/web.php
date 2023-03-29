@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('/prestadores', [PrestadoressController::class, 'index'])->name('prestadores.index');
 
 Route::get('/home', [GatosController::class, 'home'])->name('home.home');
+//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
