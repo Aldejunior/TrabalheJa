@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PrestadoresController;
+use App\Http\Controllers\ServicosController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +21,10 @@ Route::get('/', function () {
 });
 
 
-Route::get('/prestadores', [PrestadoressController::class, 'index'])->name('prestadores.index');
+Route::get('/prestadores', [PrestadoresController::class, 'index'])->name('prestadores.index');
 
-Route::get('/home', [GatosController::class, 'home'])->name('home.home');
-//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Route::get('/home', [PrestadoresController::class, 'home'])->name('prestadores.home');
+
+Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name('prestadores.create');
+
+Route::post('/prestadores', [PrestadoresController::class, 'store'])->name('prestadores.store');
