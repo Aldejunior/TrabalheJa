@@ -28,3 +28,5 @@ Route::get('/home', [PrestadoresController::class, 'home'])->name('prestadores.h
 Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name('prestadores.create');
 
 Route::post('/prestadores', [PrestadoresController::class, 'store'])->name('prestadores.store');
+
+Route::get('/servico', [ServicosController::class, 'index'])->name('servicos.index');
