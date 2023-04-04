@@ -30,3 +30,4 @@ Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name(
 Route::post('/prestadores', [PrestadoresController::class, 'store'])->name('prestadores.store');
 
 Route::get('/servico', [ServicosController::class, 'index'])->name('servicos.index');
+
