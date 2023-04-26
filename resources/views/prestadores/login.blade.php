@@ -74,12 +74,7 @@
 <main class="form-signin w-100 m-auto">
   <form action="prestadores.store" method="Post"> <!-- deve enviar os dados do form para uma pagina, que salve os dados no banco, assim que salvar deve ser redirecionado para o homePrestador -->
     <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Cadastro do Prestador</h1>
-
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="nome@examplo.com">
-      <label for="floatingInput">Nome:</label>
-    </div>
+    <h1 class="h3 mb-3 fw-normal">Login do Prestador</h1>
     <br>
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInput" placeholder="nome@examplo.com">
@@ -90,26 +85,12 @@
       <input type="email" class="form-control" id="floatingInput" placeholder="nome@examplo.com">
       <label for="floatingInput">Senha:</label>
     </div>
-    <br>
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="nome@examplo.com">
-      <label for="floatingInput">Confirmar senha:</label>
-    </div>
-    <br>
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="nome@examplo.com">
-      <label for="floatingInput">CPF/CNPJ:</label>
-    </div>
-    <br>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Senha">
-      <label for="floatingPassword">Telefone celular:</label>
       <br>
 
     <button class="w-100 btn btn-lg btn-success" type="submit">Cadastrar</button><br /><br />
   </form>
-  <a href="{{route('prestadores.home')}}">
-    <button class="w-100 btn btn-lg btn-warning" type="button" >Voltar</button>
+  <a href="{{route('prestadores.index')}}">
+    <button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button>
   </a>
     <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
 </main>

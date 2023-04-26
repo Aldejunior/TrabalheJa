@@ -36,7 +36,13 @@ class PrestadoresController extends Controller
 
         $Prestador->save();
 
-        return redirect()->route('prestadores.index', $Prestador->id);
+        return view('prestadores.index', $Prestador->id);
+    }
+
+    public function login(Prestador $Prestador)
+    {
+        $Prestador->show();
+        return view('prestadores.index');
     }
 
 }

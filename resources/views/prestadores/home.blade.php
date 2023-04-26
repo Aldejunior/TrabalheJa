@@ -80,7 +80,7 @@
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
-              <li><a href="prestador/index.html" class="text-white">Prestador</a></li>
+              <li><a href="{{route('prestadores.create')}}" class="text-white">Prestador</a></li>
           </ul>
         </div>
       </div>
