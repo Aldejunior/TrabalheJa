@@ -74,13 +74,13 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
-          <p class="text-muted">Add some information about the album below, the author, or any other background p some informative tidbits. Thhem  s networking sites or contact information.</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
           <h4 class="text-white">Menu</h4>
           <ul class="list-unstyled">
-              <li><a href="{{route('prestadores.create')}}" class="text-white">Prestador</a></li>
-              <li><a href="{{route('prestadores.create')}}" class="text-white">Serviços</a></li
+                <li><a href="{{route('prestadores.create')}}" class="text-white">Prestador</a></li>
+                <li><a href="{{route('prestadores.create')}}" class="text-white">Serviços</a></li>
+                <li><a href="{{route('prestadores.create')}}" class="text-white">Login</a></li>
            </ul>
         </div>
       </div>
@@ -107,8 +107,8 @@
         <h1 class="fw-light">Trabalhe Já</h1>
         <p class="lead text-muted">O Trabalhe Já tem como objetivo facilitar a rotina dos usuários conectando várias individuos, tais como empresas, empreendedores independentes e clientes.</p>
         <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+          <a href="#" class="btn btn-primary my-2">Amo o alder</a>
+          <a href="#" class="btn btn-secondary my-2">Amo o victor</a>
         </p>
       </div>
     </div>
@@ -120,9 +120,9 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <img src="{{asset('imagens/mecanico.jpeg')}}"width="100%" height="225">
             <div class="card-body">
-              <p class="card-text">Descrição: </p>
+              <p class="card-text"> </p>
 
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -136,9 +136,9 @@
         </div>
         <div class="col">
           <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <img src="{{asset('imagens/borracheiro.jpg')}}"width="100%" height="225">
             <div class="card-body">
-              <p class="card-text">Descrição: </p>
+              <p class="card-text"></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
@@ -151,55 +151,9 @@
         </div>
         <div class="col">
           <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <img src="{{asset('imagens/pintor.jpg')}}"width="100%" height="225">
             <div class="card-body">
-              <p class="card-text">Descrição: </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">Descrição: </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">Descrição: </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">Descrição: </p>
+              <p class="card-text"> </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
@@ -213,9 +167,9 @@
 
         <div class="col">
           <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <img src="{{asset('imagens/marceneiro.jpg')}}"width="100%" height="225">
             <div class="card-body">
-              <p class="card-text">Descrição: </p>
+              <p class="card-text"> </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
@@ -228,9 +182,9 @@
         </div>
         <div class="col">
           <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <img src="{{asset('imagens/pedreiro.jpg')}}"width="100%" height="225">
             <div class="card-body">
-              <p class="card-text">Descrição: </p>
+              <p class="card-text"> </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
@@ -243,9 +197,55 @@
         </div>
         <div class="col">
           <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <img src="{{asset('imagens/costureira.jpeg')}}"width="100%" height="225">
             <div class="card-body">
-              <p class="card-text">Descrição: </p>
+              <p class="card-text"> </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{asset('imagens/encanador.jpg')}}"width="100%" height="225">
+            <div class="card-body">
+              <p class="card-text">como quebrou esse cano ai ?</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{asset('imagens/eletricista.jpg')}}"width="100%" height="225">
+            <div class="card-body">
+              <p class="card-text"> </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{asset('imagens/cabeleireiro.jpg')}}"width="100%" height="225">
+            <div class="card-body">
+              <p class="card-text"> </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
@@ -267,6 +267,7 @@
         <p class="float-end mb-1">
         <p class="mb-1">TrabalheJá &copy;</p>
         <p class="mb-0">Desenvolvido por: Victor e Aldejunior</p>
+        <p class="mb-0">Entre em contado conosco: Trabalheja@outlook.com</p>
       </div>
     </footer>
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
