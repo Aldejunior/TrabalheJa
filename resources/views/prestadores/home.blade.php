@@ -13,21 +13,25 @@
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-      .bd-placeholder-img {
+
+
+
+
+    .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
         -webkit-user-select: none;
         -moz-user-select: none;
         user-select: none;
-      }
+    }
 
-      @media (min-width: 768px) {
+    @media (min-width: 768px) {
         .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        font-size: 3.5rem;
         }
       }
 
-      .b-example-divider {
+    .b-example-divider {
         height: 3rem;
         background-color: rgba(0, 0, 0, .1);
         border: solid rgba(0, 0, 0, .15);
@@ -35,25 +39,25 @@
         box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
       }
 
-      .b-example-vr {
+    .b-example-vr {
         flex-shrink: 0;
         width: 1.5rem;
         height: 100vh;
       }
 
-      .bi {
+    .bi {
         vertical-align: -.125em;
         fill: currentColor;
       }
 
-      .nav-scroller {
+    .nav-scroller {
         position: relative;
         z-index: 2;
         height: 2.75rem;
         overflow-y: hidden;
       }
 
-      .nav-scroller .nav {
+    .nav-scroller .nav {
         display: flex;
         flex-wrap: nowrap;
         padding-bottom: 1rem;
@@ -104,8 +108,8 @@
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Trabalhe Já</h1>
-        <p class="lead text-muted">O Trabalhe Já tem como objetivo facilitar a rotina dos usuários conectando várias individuos, tais como empresas, empreendedores independentes e clientes.</p>
+        <h1 class="fw-light"><b>Trabalhe Já</b></h1>
+        <p class="lead text-muted"><b>O Trabalhe Já tem como objetivo facilitar a rotina dos usuários conectando várias individuos, tais como empresas, empreendedores independentes e clientes.</b></p>
         <p>
           <a href="#" class="btn btn-primary my-2">Amo o alder</a>
           <a href="#" class="btn btn-secondary my-2">Amo o victor</a>
