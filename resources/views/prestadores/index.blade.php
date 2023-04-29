@@ -84,7 +84,7 @@
           <ul class="list-unstyled">
               <li><a href="prestador/index.html" class="text-white">Prestador</a></li>
               <li><a href="prestador/index.html" class="text-white">Servidor</a></li>
-              <li><a href="prestador/index.html" class="text-white">Login</a></li>
+              <li><a href="prestador/index.html" class="text-white">Logout</a></li>
           </ul>
         </div>
       </div>
