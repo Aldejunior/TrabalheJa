@@ -41,8 +41,7 @@ class PrestadoresController extends Controller
 
     public function login(Prestador $Prestador)
     {
-        $Prestador->show();
-        return view('prestadores.index');
+        return view('prestadores.login');
     }
 
 }

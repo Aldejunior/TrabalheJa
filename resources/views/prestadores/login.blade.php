@@ -87,15 +87,11 @@
     </div>
       <br>
 
-    <button class="w-100 btn btn-lg btn-success" type="submit">Cadastrar</button><br /><br />
+    <button class="w-100 btn btn-lg btn-success" type="submit">Entrar</button><br /><br />
   </form>
-  <a href="{{route('prestadores.index')}}">
-    <button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button>
-  </a>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
+  <a href="{{route('prestadores.home')}}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
+
+    <p class="mt-5 mb-3 text-muted">&copy; 2022–2023</p>
 </main>
-
-
-
   </body>
 </html>
