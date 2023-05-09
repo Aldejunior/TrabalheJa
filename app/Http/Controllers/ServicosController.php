@@ -11,4 +11,16 @@ class ServicosController extends Controller
     {
         return view('servicos.index');
     }
+
+    public function store(Request $requisicao)
+    {
+        $Servico = new Servico();
+
+        $Servico->Servico= $requisicao->servico;
+        $Servico->Prestador = $requisicao->prestador;
+        $Servico->Descricao = $requisicao->descricao;
+        $Servico->Valor = $requisicao->valor;
+
+        return view('Servicos.index', $Servico->id);
+    }
 }

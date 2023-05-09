@@ -33,3 +33,4 @@ Route::get('/prestadores/login', [PrestadoresController::class, 'login'])->name(
 
 Route::get('/servico', [ServicosController::class, 'index'])->name('servicos.index');
 
+Route::get('/servico/cadastro', [ServicosController::class, 'login'])->name('servicos.login');
