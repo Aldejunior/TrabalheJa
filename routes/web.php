@@ -20,7 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/prestadores', [PrestadoresController::class, 'index'])->name('prestadores.index');
 
 Route::get('/home', [PrestadoresController::class, 'home'])->name('prestadores.home');
