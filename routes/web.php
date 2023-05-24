@@ -16,13 +16,9 @@ use App\Http\Controllers\ServicosController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PrestadoresController::class, 'home'])->name('prestadores.home');
 
 Route::get('/prestadores', [PrestadoresController::class, 'index'])->name('prestadores.index');
-
-Route::get('/home', [PrestadoresController::class, 'home'])->name('prestadores.home');
 
 Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name('prestadores.create');
 
