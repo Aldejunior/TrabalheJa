@@ -2,7 +2,6 @@
 
 @section('conteudo')
     <form action="{{ route('prestadores.update', $prestador->id) }}" method="post" class="mb-3">
-        <!-- deve enviar os dados do form para uma pagina, que salve os dados no banco, assim que salvar deve ser redirecionado para o homePrestador -->
         @csrf
         @method('put')
 
