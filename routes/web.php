@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrestadoresController;
 use App\Http\Controllers\ServicosController;
-
+use App\Http\Controllers\SiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,16 +16,33 @@ use App\Http\Controllers\ServicosController;
 |
 */
 
-Route::get('/', [PrestadoresController::class, 'home'])->name('prestadores.home');
+/**
+ * Site
+ */
+Route::get('/', [SiteController::class, 'home'])->name('site.home');
+Route::get('/entrar', [SiteController::class, 'login'])->name('site.login');
 
+
+/**
+ * Administrador
+ */
+
+// Prestador
 Route::get('/prestadores', [PrestadoresController::class, 'index'])->name('prestadores.index');
-
 Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name('prestadores.create');
+Route::get('/prestadores/{prestador}', [PrestadoresController::class, 'show'])->name('prestadores.show');
+Route::get('/prestadores/editar/{prestador}', [PrestadoresController::class, 'editar'])->name('prestadores.editar');
 
 Route::post('/prestadores', [PrestadoresController::class, 'store'])->name('prestadores.store');
+Route::put('/prestadores/{prestador}', [PrestadoresController::class, 'update'])->name('prestadores.update');
+Route::delete('/prestadores/{prestador}', [PrestadoresController::class, 'destroy'])->name('prestadores.destroy');
 
-Route::get('/prestadores/login', [PrestadoresController::class, 'login'])->name('prestadores.login');
+// Serviço
+
+
+
+
 
 Route::get('/servico', [ServicosController::class, 'index'])->name('servicos.index');
 
-Route::get('/servico/cadastro', [ServicosController::class, 'login'])->name('servicos.login');
+Route::get('/servico/cadastro', [ServicosController::class, 'create'])->name('servicos.create');

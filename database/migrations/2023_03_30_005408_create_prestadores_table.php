@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('senha');
             $table->string('cpf_cnpj');
             $table->string('telefone');
+
+            $table->timestamps();
         });
     }
 

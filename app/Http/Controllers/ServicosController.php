@@ -24,9 +24,9 @@ class ServicosController extends Controller
         return view('Servicos.index', $Servico->id);
     }
 
-    public function login(Servico $Servico)
+    public function create(Servico $Servico)
     {
-        return view('servicos.login');
+        return view('servicos.create');
     }
 
 }

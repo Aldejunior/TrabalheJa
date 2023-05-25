@@ -4,44 +4,77 @@ namespace App\Http\Controllers;
 
 use App\Models\Prestador;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class PrestadoresController extends Controller
 {
     public function index()
     {
-        return view('prestadores.index');
+        $prestadores = Prestador::all();
+        return view('prestadores.index', compact('prestadores'));
     }
 
-    public function home()
+    public function show(Prestador $prestador)
     {
-        return view('prestadores.home');
+        return view('prestadores.show', compact('prestador'));
     }
-
 
     public function create()
     {
         return view('prestadores.create');
     }
 
+    public function editar(Prestador $prestador)
+    {
+        return view('prestadores.editar', compact('prestador'));
+    }
+
 
     public function store(Request $requisicao)
     {
-        $Prestador = new Prestador();
+        $requisicao->validate([
+            'nome' => 'required',
+            'email' => 'required',
+            'senha' => 'required|confirmed',
+            'cpf_cnpj' => 'required',
+            'telefone' => 'required',
+        ]);
 
-        $Prestador->nome = $requisicao->nome;
-        $Prestador->email = $requisicao->email;
-        $Prestador->senha = $requisicao->senha;
-        $Prestador->cpf_cnpj = $requisicao->cpf_cnpj;
-        $Prestador->telefone = $requisicao->telefone;
+        $prestador = new Prestador();
 
-        $Prestador->save();
+        $prestador->nome = $requisicao->nome;
+        $prestador->email = $requisicao->email;
+        $prestador->senha = Hash::make($requisicao->senha);
+        $prestador->cpf_cnpj = $requisicao->cpf_cnpj;
+        $prestador->telefone = $requisicao->telefone;
 
-        return view('prestadores.index', $Prestador->id);
+        $prestador->save();
+
+        return redirect()->route('site.login');
     }
 
-    public function login(Prestador $Prestador)
+    public function update(Prestador $prestador, Request $request)
     {
-        return view('prestadores.login');
+        $request->validate([
+            'nome' => 'required',
+            'email' => 'required',
+            'cpf_cnpj' => 'required',
+            'telefone' => 'required',
+        ]);
+
+        $prestador->nome = $request->nome;
+        $prestador->email = $request->email;
+        $prestador->cpf_cnpj = $request->cpf_cnpj;
+        $prestador->telefone = $request->telefone;
+
+        $prestador->save();
+
+        return redirect()->route('prestadores.show', $prestador->id);
     }
 
+    public function destroy(Prestador $prestador)
+    {
+        $prestador->delete();
+        return redirect()->route('prestadores.index');
+    }
 }
