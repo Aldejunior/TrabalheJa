@@ -50,7 +50,7 @@ class PrestadoresController extends Controller
 
         $prestador->save();
 
-        return redirect()->route('site.login');
+        return redirect()->route('site.home');
     }
 
     public function update(Prestador $prestador, Request $request)
