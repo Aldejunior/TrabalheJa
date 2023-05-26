@@ -25,12 +25,11 @@ Route::get('/entrar', [SiteController::class, 'login'])->name('site.login');
 
 /**
  * Administrador
- *
-    *Route::get('/administrador', [AdministradorController::class, 'index'])->name('administrador.index');
-    *Route::get('/administrador/novo', [AdministradorController::class, 'create'])->name('administrador.create');
-    *Route::get('/administrador/editar/{administrador}', [AdministradorController::class, 'editar'])->name('administrador.editar');
- *
  */
+    Route::get('/administrador', [AdministradorController::class, 'index'])->name('administradores.index');
+    Route::get('/administrador/novo', [AdministradorController::class, 'create'])->name('administradores.create');
+    Route::get('/administrador/editar/{administrador}', [AdministradorController::class, 'editar'])->name('administradores.editar');
+    Route::get('/administrador/{administrador}', [AdministradorController::class, 'show'])-> name('administradores.show');
 
 // Prestador
 Route::get('/prestadores', [PrestadoresController::class, 'index'])->name('prestadores.index');
