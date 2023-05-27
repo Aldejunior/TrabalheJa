@@ -76,22 +76,47 @@
       <label for="inputEmail4" class="form-label">Serviço</label>
       <input type="email" class="form-control" id="inputEmail4">
     </div>
+
+    @error('servico')
+        <div class="alert alert-danger">{{ $message }}</div>
+     @enderror
+
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Prestador</label>
       <input type="password" class="form-control" id="inputPassword4">
     </div>
+
+     @error('prestador')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <div class="col-12">
       <label for="inputAddress" class="form-label">Descrição</label>
       <input type="text" class="form-control" id="inputAddress" >
     </div>
+
+    @error('descricao')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <div class="col-12">
       <label for="inputAddress2" class="form-label">Valor</label>
       <input type="text" class="form-control" id="inputAddress2" >
     </div>
+
+    @error('valor')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <div class="col-md-6">
       <label for="inputCity" class="form-label">Cidade</label>
       <input type="text" class="form-control" id="inputCity">
     </div>
+
+    @error('cidade')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <div class="col-md-4">
       <label for="inputState" class="form-label">Estado</label>
       <select id="inputState" class="form-select">
@@ -100,12 +125,21 @@
         <option>Rio de Janeiro</option>
      <option>Mato Grosso do sul</option>
 
+    @error('estado')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
       </select>
     </div>
     <div class="col-md-2">
       <label for="inputZip" class="form-label">CEP</label>
       <input type="text" class="form-control" id="inputZip">
     </div>
+
+    @error('cep')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <div class="col-12">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -114,6 +148,11 @@
         </label>
       </div>
     </div>
+
+    @error('salvar_cadastro')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <div class="col-12">
         <button class="w-100 btn btn-lg btn-success" type="submit">Entrar</button><br /><br />
         <button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
