@@ -48,7 +48,3 @@ Route::get('/servicos/cadastro', [ServicosController::class, 'create'])->name('s
 Route::post('/servicos', [servicosController::class, 'store'])->name('servico.store');
 Route::put('/servicos/{prestador}', [servicosController::class, 'update'])->name('servico.update');
 Route::delete('/servicos/{prestador}', [servicosController::class, 'destroy'])->name('servicos.destroy');
-
-//Prestador_Servico
-
-Route::get('/', [PrestadorServicoController::class, 'index'])->name('.index');
