@@ -29,6 +29,8 @@ Route::get('/administradores/novo', [AdministradorController::class, 'create'])-
 Route::get('/administradores/editar/{administrador}', [AdministradorController::class, 'editar'])->name('administradores.editar');
 Route::get('/administradores/{administrador}', [AdministradorController::class, 'show'])-> name('administradores.show');
 Route::post('/administradores', [AdministradorController::class, 'store'])->name('administradores.store');
+Route::delete('/administrador/{administrador}', [AdministradorController::class, 'destroy'])->name('administradores.destroy');
+Route::put('/administradores/{administrador}', [AdministradorController::class, 'update'])->name('administradores.update');
 
 // Prestador
 
@@ -41,10 +43,11 @@ Route::post('/prestadores', [PrestadoresController::class, 'store'])->name('pres
 Route::put('/prestadores/{prestador}', [PrestadoresController::class, 'update'])->name('prestadores.update');
 Route::delete('/prestadores/{prestador}', [PrestadoresController::class, 'destroy'])->name('prestadores.destroy');
 
-// Serviço
+// Serviço  fazer no final de semana
 
 Route::get('/servicos', [ServicosController::class, 'index'])->name('servicos.index');
 Route::get('/servicos/cadastro', [ServicosController::class, 'create'])->name('servicos.create');
-Route::post('/servicos', [servicosController::class, 'store'])->name('servico.store');
-Route::put('/servicos/{prestador}', [servicosController::class, 'update'])->name('servico.update');
-Route::delete('/servicos/{prestador}', [servicosController::class, 'destroy'])->name('servicos.destroy');
+Route::post('/servicos', [servicosController::class, 'store'])->name('servicos.store');
+Route::put('/servicos/{prestador}', [servicosController::class, 'update'])->name('servicos.update');
+Route::delete('/servicos/{servico}', [servicosController::class, 'destroy'])->name('servicos.destroy');
+Route::get('/servicos/{servico}', [PrestadoresController::class, 'show'])->name('servicos.show');

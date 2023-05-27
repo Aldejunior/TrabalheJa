@@ -14,7 +14,7 @@ class AdministradorController extends Controller
         return view('administradores.index', compact('administradores'));
     }
 
-    public function show(Administrador $Administrador)
+    public function show(administrador $administrador)
     {
         return view('administradores.show', compact('administrador'));
     }
@@ -24,7 +24,7 @@ class AdministradorController extends Controller
         return view('administradores.create');
     }
 
-    public function editar(Administrador $Administrador)
+    public function editar(Administrador $administrador)
     {
         return view('administradores.editar', compact('administrador'));
     }

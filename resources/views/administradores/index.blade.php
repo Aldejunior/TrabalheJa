@@ -1,7 +1,5 @@
 @extends('layout.admin')
 
-@endforeach
-
 @section('conteudo')
 <table class="table table-striped">
     <thead>
@@ -25,5 +23,5 @@
                     </form>
                 </td>
             </tr>
-
+        @endforeach
 @endsection
