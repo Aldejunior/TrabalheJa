@@ -28,7 +28,7 @@ Route::get('/administradores', [AdministradorController::class, 'index'])->name(
 Route::get('/administradores/novo', [AdministradorController::class, 'create'])->name('administradores.create');
 Route::get('/administradores/editar/{administrador}', [AdministradorController::class, 'editar'])->name('administradores.editar');
 Route::get('/administradores/{administrador}', [AdministradorController::class, 'show'])-> name('administradores.show');
-Route::post('/administradores', [PrestadoresController::class, 'store'])->name('administradores.store');
+Route::post('/administradores', [AdministradorController::class, 'store'])->name('administradores.store');
 
 // Prestador
 
