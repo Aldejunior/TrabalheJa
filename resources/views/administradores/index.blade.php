@@ -1,5 +1,7 @@
 @extends('layout.admin')
 
+@endforeach
+
 @section('conteudo')
 <table class="table table-striped">
     <thead>
