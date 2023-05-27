@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('prestadores_servico', function (Blueprint $table) {
+        Schema::create('prestador_servico', function (Blueprint $table) {
             $table->id();
-            $table->integer('servico',200);
-            $table->integer('prestadores',200);
-            $table->string('valor');
+            $table->integer('servico_id');
+            $table->integer('prestador_id');
+
+            $table->decimal('valor', 10, 2);
             $table->string('cidade');
             $table->string('estado');
             $table->string('cep');
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prestadores_servico');
+        Schema::dropIfExists('prestadorServico');
     }
 };

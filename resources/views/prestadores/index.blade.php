@@ -6,9 +6,6 @@
             <tr>
                 <td>Nome</td>
                 <td>E-mail</td>
-                <td>CPF/CNPJ</td>
-                <td>Telefone</td>
-                <td>Ações</td>
             </tr>
         </thead>
         <tbody>
@@ -16,8 +13,7 @@
                 <tr>
                     <td>{{ $prestador->nome }}</td>
                     <td>{{ $prestador->email }}</td>
-                    <td>{{ $prestador->cpf_cnpj }}</td>
-                    <td>{{ $prestador->telefone }}</td>
+
                     <td>
                         <a class="btn btn-primary" href="{{ route('prestadores.editar', $prestador->id) }}">Editar</a>
                         <form action="{{ route('prestadores.destroy', $prestador->id) }}" method="post">
