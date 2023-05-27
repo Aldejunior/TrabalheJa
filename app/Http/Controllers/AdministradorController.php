@@ -49,7 +49,7 @@ class AdministradorController extends Controller
     }
 
 
-        public function update(Administrador $administrador, Request $request)
+    public function update(Administrador $administrador, Request $request)
     {
         $request->validate([
             'nome' => 'required',
