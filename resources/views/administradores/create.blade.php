@@ -1,10 +1,10 @@
 @extends('layout.admin')
 
 @section('conteudo')
-    <form action="{{ route('prestadores.store') }}" method="post" class="mb-3">
+    <form action="{{ route('administradores.store') }}" method="post" class="mb-3">
 
         @csrf
-        <h1 class="h3 mb-3 fw-normal">Cadastro do Prestador</h1>
+        <h1 class="h3 mb-3 fw-normal">Cadastro do Administrador</h1>
 
         <div class="form-floating mb-3">
             <input type="text" name="nome" value="{{ old('nome') }}" class="form-control" placeholder="">
@@ -50,5 +50,5 @@
         <button class="w-100 btn btn-lg btn-success" type="submit">Cadastrar</button>
     </form>
 
-    <a href="{{ route('administrador.index') }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
+    <a href="{{ route('site.home') }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
 @endsection

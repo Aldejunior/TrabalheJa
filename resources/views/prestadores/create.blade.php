@@ -2,12 +2,11 @@
 
 @section('conteudo')
     <form action="{{ route('prestadores.store') }}" method="post" class="mb-3">
-        <!-- deve enviar os dados do form para uma pagina, que salve os dados no banco, assim que salvar deve ser redirecionado para o homePrestador -->
         @csrf
         <h1 class="h3 mb-3 fw-normal">Cadastro do Prestador</h1>
 
         <div class="form-floating mb-3">
-            <input type="text" name="nome" value="{{ old('nome') }}" class="form-control" placeholder="">
+            <input type="text" name="nome" value="{{ old('nome') }}" class="form-control" >
             <label>Nome:</label>
         </div>
 
@@ -16,7 +15,7 @@
         @enderror
 
         <div class="form-floating mb-3">
-            <input type="email" name="email" value="{{ old('email') }}" class="form-control" placeholder="">
+            <input type="email" name="email" value="{{ old('email') }}" class="form-control" >
             <label>E-mail:</label>
         </div>
 
@@ -27,7 +26,7 @@
         <div class="row">
             <div class="col-6">
                 <div class="form-floating mb-3">
-                    <input type="password" name="senha" class="form-control" placeholder="">
+                    <input type="password" name="senha" class="form-control" >
                     <label>Senha:</label>
                 </div>
 
@@ -37,7 +36,7 @@
             </div>
             <div class="col-6">
                 <div class="form-floating mb-3">
-                    <input type="password" name="senha_confirmation" class="form-control" placeholder="">
+                    <input type="password" name="senha_confirmation" class="form-control" >
                     <label>Confirmar senha:</label>
                 </div>
 
@@ -48,7 +47,7 @@
         </div>
 
         <div class="form-floating mb-3">
-            <input type="text" name="cpf_cnpj" value="{{ old('cpf_cnpj') }}" class="form-control" placeholder="">
+            <input type="text" name="cpf_cnpj" value="{{ old('cpf_cnpj') }}" class="form-control" >
             <label>CPF/CNPJ:</label>
         </div>
 
@@ -57,7 +56,7 @@
         @enderror
 
         <div class="form-floating mb-3">
-            <input type="text" name="telefone" value="{{ old('telefone') }}" class="form-control" placeholder="">
+            <input type="text" name="telefone" value="{{ old('telefone') }}" class="form-control" >
             <label>Telefone celular:</label>
         </div>
 
