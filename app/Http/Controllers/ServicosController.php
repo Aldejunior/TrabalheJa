@@ -14,9 +14,9 @@ class ServicosController extends Controller
         return view('servicos.index', compact('servicos'));
     }
 
-    public function show(servico $servico)
+    public function show(Servico $servico)
     {
-        return view('servicos.show', compact('servicos'));
+        return view('servicos.show', compact('servico'));
     }
 
     public function create()
@@ -28,7 +28,6 @@ class ServicosController extends Controller
     {
         return view('servicos.editar', compact('servico'));
     }
-
 
     public function store(Request $requisicao)
     {

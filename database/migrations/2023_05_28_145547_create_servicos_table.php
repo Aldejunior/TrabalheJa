@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('servicos', function (Blueprint $table) {
             $table->id();
-            $table->string('servico');
-            $table->string('prestador');
+            $table->string('titulo');
             $table->string('descricao');
-            $table->string('valor');
+            $table->string('foto');
+
+
+            $table->timestamps();
         });
     }
 
