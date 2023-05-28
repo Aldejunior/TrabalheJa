@@ -14,26 +14,25 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
-        <div class="form-floating mb-3">
-            <input type="text" name="descricao" value="{{ old('descricao') }}" class="form-control" >
-            <label>Descrição:</label>
-        </div>
-
-        @error('descricao')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-
-        <div class="form-floating mb-3">
-            <input type="text" name="foto" value="{{ old('foto') }}" class="form-control" >
-            <label>Foto:</label>
-        </div>
-
-        @error('foto')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-
-        <button class="w-100 btn btn-lg btn-success" type="submit">Cadastrar</button>
-    </form>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">CEP</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Salvar cadastro
+        </label>
+      </div>
+    </div>
+    <div class="col-12">
+        <button class="w-100 btn btn-lg btn-success" type="submit">Entrar</button><br /><br />
+        <button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
+    </div>
+  </form>
 
     <a href="{{ route('administradores.index') }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
 @endsection

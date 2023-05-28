@@ -13,8 +13,10 @@ class Servico extends Model
 
 
     protected $fillable = [
+
         'titulo',
         'descricao',
         'foto'
+
     ];
 }
