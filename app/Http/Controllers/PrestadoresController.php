@@ -14,7 +14,7 @@ class PrestadoresController extends Controller
         return view('prestadores.index', compact('prestadores'));
     }
 
-    public function show(Prestador $prestador)
+    public function show(prestador $prestador)
     {
         return view('prestadores.show', compact('prestador'));
     }
@@ -50,7 +50,7 @@ class PrestadoresController extends Controller
 
         $prestador->save();
 
-        return redirect()->route('prestadores.show');
+        return redirect()->route('prestadores.index');
     }
 
     public function update(Prestador $prestador, Request $request)
@@ -77,4 +77,6 @@ class PrestadoresController extends Controller
         $prestador->delete();
         return redirect()->route('prestadores.index');
     }
+
+
 }

@@ -1,6 +1,9 @@
 @extends('layout.admin')
 
 @section('conteudo')
+
+<h1 class="h3 mb-3 fw-normal">Perfil do Administrador</h1>
+
     <h1>{{ $administrador->nome }}</h1>
     <p>{{ $administrador->email }}</p>
     <p>{{ $administrador->cpf_cnpj }}</p>

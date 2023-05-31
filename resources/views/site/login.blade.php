@@ -6,7 +6,7 @@
         <h1 class="h3 mb-3 fw-normal">Login do Prestador</h1>
 
         <div class="form-floating mb-3">
-            <input type="email" name="email" class="form-control" value="{{ old('email') }}" id="floatingInput" placeholder="nome@examplo.com">
+            <input type="email" name="email" class="form-control" value="{{ old('email') }}" id="floatingInput" placeholder="">
             <label for="floatingInput">E-mail:</label>
         </div>
         @error('email')

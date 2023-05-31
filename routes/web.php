@@ -38,7 +38,6 @@ Route::get('/prestadores', [PrestadoresController::class, 'index'])->name('prest
 Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name('prestadores.create');
 Route::get('/prestadores/{prestador}', [PrestadoresController::class, 'show'])->name('prestadores.show');
 Route::get('/prestadores/editar/{prestador}', [PrestadoresController::class, 'editar'])->name('prestadores.editar');
-
 Route::post('/prestadores', [PrestadoresController::class, 'store'])->name('prestadores.store');
 Route::put('/prestadores/{prestador}', [PrestadoresController::class, 'update'])->name('prestadores.update');
 Route::delete('/prestadores/{prestador}', [PrestadoresController::class, 'destroy'])->name('prestadores.destroy');
@@ -50,5 +49,5 @@ Route::get('/servicos/cadastro', [ServicosController::class, 'create'])->name('s
 Route::post('/servicos', [ServicosController::class, 'store'])->name('servicos.store');
 Route::put('/servicos/{servico}', [ServicosController::class, 'update'])->name('servicos.update');
 Route::delete('/servicos/{servico}', [ServicosController::class, 'destroy'])->name('servicos.destroy');
-Route::get('/servicos/tabela', [ServicosController::class, 'show'])->name('servicos.show');
+Route::get('/servicos/{servico}', [ServicosController::class, 'show'])->name('servicos.show');
 Route::get('/servicos/editar/{servico}', [ServicosController::class, 'editar'])->name('servicos.editar');

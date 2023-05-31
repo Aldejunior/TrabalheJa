@@ -2,6 +2,10 @@
 
 @section('conteudo')
 <table class="table table-bordered ">
+
+    <h1 class="h3 mb-3 fw-normal">Lista de Administradores</h1>
+
+
     <thead>
         <tr>
             <td>Nome</td>
@@ -28,7 +32,7 @@
         @endforeach
     </tbody>
 </table>
-        <a href="{{ route('servicos.show') }}"><button class="w-100 btn btn-lg btn-primary mb-3" type="button">Vizualizar Serviços</button></a>
+        <a href="{{ route('servicos.index') }}"><button class="w-100 btn btn-lg btn-primary mb-3" type="button">Vizualizar Serviços</button></a>
 
         <a href="{{ route('servicos.create') }}"><button class="w-100 btn btn-lg btn-primary" type="button">Cadastrar Serviço</button></a>
 

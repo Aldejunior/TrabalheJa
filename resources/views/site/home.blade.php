@@ -3,77 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="Contatoport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.108.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Trabalhe já </title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
-
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-
-        .b-example-divider {
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-        }
-
-        .bi {
-            vertical-align: -.125em;
-            fill: currentColor;
-        }
-
-        .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
-        }
-
-        .nav-scroller .nav {
-            display: flex;
-            flex-wrap: nowrap;
-            padding-bottom: 1rem;
-            margin-top: -1px;
-            overflow-x: auto;
-            text-align: center;
-            white-space: nowrap;
-            -webkit-overflow-scrolling: touch;
-
-        }
-
-        nav {
-
-            margin-left: 590px;
-
-
-        }
-    </style>
-
 </head>
 
 <body>
@@ -98,7 +30,7 @@
 
         <div class="navbar navbar-dark bg-dark shadow-sm">
             <div class="container">
-                <a href="#" class="navbar-brand d-flex align-items-center">
+                <a href="{{ route( 'site.home' ) }}" class="navbar-brand d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         aria-hidden="true" class="me-2" ContatoBox="0 0 24 24">
@@ -107,7 +39,7 @@
                     </svg>
                     <strong>Trabalhe já</strong>
 
-                    <nav class="navbar bg-body-tertiary">
+                    <nav class="navbar">
                         <div class="container-fluid">
                             <a class="navbar-brand"></a>
                             <form class="d-flex" role="search">
@@ -124,9 +56,8 @@
                 </button>
             </div>
         </div>
+
     </header>
-
-
     <main>
 
         <section class="py-5 text-center container">
@@ -134,10 +65,10 @@
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1 class="fw-light"><b>Trabalhe Já</b></h1>
                     <p class="lead text-muted"><b>O Trabalhe Já tem como objetivo facilitar a rotina dos usuários
-                            conectando várias individuos, tais como empresas, empreendedores independentes e
+                            conectando vários individuos, tais como empresas, empreendedores independentes e
                             clientes.</b></p>
                     <p>
-                        <a href="#" class="btn btn-primary my-2">Amo o alder</a>
+                        <a href="{{route('servicos.index')}}" class="btn btn-primary my-2">Serviços</a>
                         <a href="#" class="btn btn-secondary my-2">Amo o victor</a>
                     </p>
                 </div>

@@ -10,7 +10,7 @@ class ServicosController extends Controller
 {
     public function index()
     {
-        $servicos = servico::all();
+        $servicos = Servico::all();
         return view('servicos.index', compact('servicos'));
     }
 
@@ -34,14 +34,12 @@ class ServicosController extends Controller
         $requisicao->validate([
             'titulo' => 'required',
             'descricao' => 'required',
-            'foto' => 'required'
 
         ]);
 
         $servico = new servico();
 
         $servico->titulo = $requisicao->titulo;
-        $servico->descricao = $requisicao->descricao;
         $servico->descricao = $requisicao->descricao;
 
         $servico->save();
@@ -54,12 +52,10 @@ class ServicosController extends Controller
         $request->validate([
             'titulo' => 'required',
             'descricao' => 'required',
-            'foto' => 'required'
         ]);
 
         $servico->titulo = $request->titulo;
         $servico->descricao = $request->descricao;
-        $servico->foto = $request->foto;
 
         $servico->save();
 

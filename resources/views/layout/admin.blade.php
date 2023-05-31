@@ -28,7 +28,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('prestadores.create') }}">Prestadores</a>
+                        <a class="nav-link" href="{{ route('prestadores.index') }}">Prestadores</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('administradores.create') }}">administradores</a>

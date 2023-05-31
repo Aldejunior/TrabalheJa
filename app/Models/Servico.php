@@ -16,7 +16,5 @@ class Servico extends Model
 
         'titulo',
         'descricao',
-        'foto'
-
     ];
 }

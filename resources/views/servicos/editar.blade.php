@@ -28,5 +28,5 @@
         <button class="w-100 btn btn-lg btn-success" type="submit">Atualizar</button>
     </form>
 
-    <a href="{{ route('servicos.show') }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
+    <a href="{{ route('servicos.show', $servico->id) }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
 @endsection
