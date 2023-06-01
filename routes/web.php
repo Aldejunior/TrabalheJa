@@ -51,3 +51,7 @@ Route::put('/servicos/{servico}', [ServicosController::class, 'update'])->name('
 Route::delete('/servicos/{servico}', [ServicosController::class, 'destroy'])->name('servicos.destroy');
 Route::get('/servicos/{servico}', [ServicosController::class, 'show'])->name('servicos.show');
 Route::get('/servicos/editar/{servico}', [ServicosController::class, 'editar'])->name('servicos.editar');
+
+// Prestador Serviço
+
+Route::post('/prestadores/servico', [PrestadoresController::class, 'StorePrestadorServico'])->name('prestadores_servico.store');

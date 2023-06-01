@@ -12,15 +12,10 @@
     <tbody>
         @foreach ($servicos as $servico)
             <tr>
-                <td>{{ $servico-> titulo }}</td>
-                <td>{{ $servico-> descricao}}</td>
+                <td>{{ $servico->titulo }}</td>
+                <td>{{ $servico->descricao}}</td>
                 <td>
-                    <a class="btn btn-primary mb-1" href="{{ route('servicos.editar', $servico->id) }}">Editar</a>
-                    <form action="{{ route('servicos.destroy', $servico->id) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-danger" type="submit">Deletar</button>
-                    </form>
+                    <a class="btn btn-primary mb-1" href="{{ route('servicos.show', $servico->id) }}">Ver</a>
                 </td>
             </tr>
         @endforeach

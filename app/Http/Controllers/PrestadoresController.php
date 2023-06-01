@@ -78,5 +78,27 @@ class PrestadoresController extends Controller
         return redirect()->route('prestadores.index');
     }
 
+    public function StorePrestadorServico(Request $requisicao)
+    {
+        $requisicao->validate([
+            'servico_id' => 'required',
+
+            'valor' => 'required',
+            'cidade' => 'required|confirmed',
+            'cpf_cnpj' => 'required',
+            'telefone' => 'required',
+        ]);
+
+        $prestador = new Prestador();
+
+        $prestador->valor = $requisicao->valor;
+        $prestador->cidade =$requisicao->cidade;
+        $prestador->cpf_cnpj = $requisicao->cpf_cnpj;
+        $prestador->telefone = $requisicao->telefone;
+
+        $prestador->save();
+
+        return redirect()->route('prestadores.index');
+    }
 
 }
