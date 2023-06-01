@@ -13,8 +13,12 @@ class Servico extends Model
 
 
     protected $fillable = [
-
         'titulo',
         'descricao',
     ];
+
+    public function prestadores()
+    {
+        return $this->belongsToMany(Prestador::class, 'prestador_servico', 'servico_id', 'prestador_id');
+    }
 }

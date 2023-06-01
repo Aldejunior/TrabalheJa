@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prestador;
+use App\Models\Servico;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class PrestadoresController extends Controller
@@ -16,7 +18,8 @@ class PrestadoresController extends Controller
 
     public function show(prestador $prestador)
     {
-        return view('prestadores.show', compact('prestador'));
+        $servicos = Servico::all();
+        return view('prestadores.show', compact('prestador', 'servicos'));
     }
 
     public function create()
@@ -81,24 +84,23 @@ class PrestadoresController extends Controller
     public function StorePrestadorServico(Request $requisicao)
     {
         $requisicao->validate([
-            'servico_id' => 'required',
-
+            'servico_id' => 'required|exists:servicos,id',
             'valor' => 'required',
-            'cidade' => 'required|confirmed',
-            'cpf_cnpj' => 'required',
-            'telefone' => 'required',
+            'cidade' => 'required',
+            'cep' => 'required',
+            'estado' => 'required',
         ]);
 
-        $prestador = new Prestador();
+        $prestador = Prestador::find(1);
 
-        $prestador->valor = $requisicao->valor;
-        $prestador->cidade =$requisicao->cidade;
-        $prestador->cpf_cnpj = $requisicao->cpf_cnpj;
-        $prestador->telefone = $requisicao->telefone;
+        $prestador->servicos()->attach($requisicao->servico_id, [
+            'valor' => $requisicao->valor,
+            'cidade' => $requisicao->cidade,
+            'cep' => $requisicao->cep,
+            'estado' => $requisicao->estado
+        ]);
 
-        $prestador->save();
-
-        return redirect()->route('prestadores.index');
+        return redirect()->route('prestadores.show', $prestador->id);
     }
 
 }

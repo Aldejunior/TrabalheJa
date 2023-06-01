@@ -54,4 +54,4 @@ Route::get('/servicos/editar/{servico}', [ServicosController::class, 'editar'])-
 
 // Prestador Serviço
 
-Route::post('/prestadores/servico', [PrestadoresController::class, 'StorePrestadorServico'])->name('prestadores_servico.store');
+Route::post('/prestadores/servico', [PrestadoresController::class, 'StorePrestadorServico'])->name('prestadores.servicos.store');

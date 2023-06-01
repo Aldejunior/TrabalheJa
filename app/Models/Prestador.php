@@ -18,4 +18,11 @@ class Prestador extends Model
         'cpf_cnpj',
         'telefone'
     ];
+
+    public function servicos()
+    {
+        return $this->belongsToMany(Servico::class, 'prestador_servico', 'prestador_id', 'servico_id')
+            ->withPivot('valor', 'cidade', 'estado', 'cep')
+            ->withTimestamps();
+    }
 }
