@@ -22,10 +22,19 @@
 </div>
 
 
+
     <form action="{{ route('prestadores.store') }}" method="post" class="containner mb-3">
         @csrf
 
         <h1 class="h3 mb-3 fw-normal">Cadastrar-se em Servico</h1>
+
+
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Escolha ô Serviço</option>
+            <option>One</option>
+            <option>Two</option>
+            <option>Three</option>
+          </select>
 
         <div class="form-floating mb-3">
             <input type="text" name="servico_id" value="{{ old('servico_id') }}" class="form-control" >
