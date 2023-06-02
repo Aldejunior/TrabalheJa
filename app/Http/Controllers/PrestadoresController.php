@@ -103,4 +103,5 @@ class PrestadoresController extends Controller
         return redirect()->route('prestadores.show', $prestador->id);
     }
 
-}
+
+};
