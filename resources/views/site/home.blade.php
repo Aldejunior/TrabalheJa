@@ -76,15 +76,18 @@
         </section>
 
         <div class="album py-5 bg-light">
-            <div class="container">
 
+            <div class="container mb-3">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach ($servicos as $servico )
                     <div class="col">
                         <div class="card shadow-sm">
                             <img src="{{ asset('imagens/mecanico.jpeg') }}"width="100%" height="225">
                             <div class="card-body">
-                                <p class="card-text"> </p>
-
+                                        <p class="card-text">
+                                            {{$servico->titulo}}
+                                            {{$servico->descricao}}
+                                        </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
@@ -93,140 +96,12 @@
 
                                 </div>
                             </div>
+
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="{{ asset('imagens/borracheiro.jpg') }}"width="100%" height="225">
-                            <div class="card-body">
-                                <p class="card-text"></p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="{{ asset('imagens/pintor.jpg') }}"width="100%" height="225">
-                            <div class="card-body">
-                                <p class="card-text"> </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button"
-                                            class="btn btn-sm btn-outline-secondary">Contato</button>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="{{ asset('imagens/marceneiro.jpg') }}"width="100%" height="225">
-                            <div class="card-body">
-                                <p class="card-text"> </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button"
-                                            class="btn btn-sm btn-outline-secondary">Contato</button>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="{{ asset('imagens/pedreiro.jpg') }}"width="100%" height="225">
-                            <div class="card-body">
-                                <p class="card-text"> </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button"
-                                            class="btn btn-sm btn-outline-secondary">Contato</button>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="{{ asset('imagens/costureira.jpeg') }}"width="100%" height="225">
-                            <div class="card-body">
-                                <p class="card-text"> </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button"
-                                            class="btn btn-sm btn-outline-secondary">Contato</button>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="{{ asset('imagens/encanador.jpg') }}"width="100%" height="225">
-                            <div class="card-body">
-                                <p class="card-text">como quebrou esse cano ai ?</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button"
-                                            class="btn btn-sm btn-outline-secondary">Contato</button>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="{{ asset('imagens/eletricista.jpg') }}"width="100%" height="225">
-                            <div class="card-body">
-                                <p class="card-text"> </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button"
-                                            class="btn btn-sm btn-outline-secondary">Contato</button>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="{{ asset('imagens/cabeleireiro.jpg') }}"width="100%" height="225">
-                            <div class="card-body">
-                                <p class="card-text"> </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button"
-                                            class="btn btn-sm btn-outline-secondary">Contato</button>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
 
     </main>
 
