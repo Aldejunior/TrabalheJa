@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Prestador extends Model
+class Prestador extends Authenticatable
 {
     use HasFactory;
 
@@ -24,5 +25,10 @@ class Prestador extends Model
         return $this->belongsToMany(Servico::class, 'prestador_servico', 'prestador_id', 'servico_id')
             ->withPivot('valor', 'cidade', 'estado', 'cep')
             ->withTimestamps();
+    }
+
+    public function getAuthPassword()
+    {
+        return $this->senha;
     }
 }

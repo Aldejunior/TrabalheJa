@@ -1,7 +1,7 @@
 @extends('layout.admin')
 
 @section('conteudo')
-    <form action="{{route('prestadores.store')}}" method="post" class="mb-3">
+    <form action="{{route('site.login.store')}}" method="post" class="mb-3">
         @csrf
         <h1 class="h3 mb-3 fw-normal">Login do Prestador</h1>
 
@@ -17,6 +17,9 @@
             <input type="password" name="senha" class="form-control" id="floatingInput" >
             <label for="floatingInput">Senha:</label>
         </div>
+        @error('senha')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
 
         <button class="w-100 btn btn-lg btn-success mb-3" type="submit">Entrar</button>
 

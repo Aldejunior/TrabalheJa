@@ -22,6 +22,9 @@ use App\Http\Controllers\AdministradorController;
 Route::get('/', [SiteController::class, 'home'])->name('site.home');
 Route::get('/entrar', [SiteController::class, 'login'])->name('site.login');
 
+Route::post('/entrar',  [SiteController::class, 'store_login'])->name('site.login.store');
+Route::get('/sair', [SiteController::class, 'logout'])->name('site.login.logout');
+
 //Administrador
 
 Route::get('/administradores', [AdministradorController::class, 'index'])->name('administradores.index');
