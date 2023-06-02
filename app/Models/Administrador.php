@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Administrador extends Model
+class Administrador extends Authenticatable
 {
     use HasFactory;
 
@@ -17,5 +18,10 @@ class Administrador extends Model
         'email',
         'senha'
     ];
+
+    public function getAuthPassword()
+    {
+        return $this->senha;
+    }
 }
 

@@ -21,6 +21,14 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        <div class="form-floating mb-3">
+            <select class="form-select" name="guarda" id="">
+                <option value="pre">Prestador</option>
+                <option value="adm">Administrador</option>
+            </select>
+            <label for="floatingInput">Tipo:</label>
+        </div>
+
         <button class="w-100 btn btn-lg btn-success mb-3" type="submit">Entrar</button>
 
     </form>

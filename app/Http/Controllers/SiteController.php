@@ -25,10 +25,11 @@ class SiteController extends Controller
     {
         $request->validate([
             'email' => 'required|email',
-            'senha' => 'required|min:6'
+            'senha' => 'required|min:6',
+            'guarda' => 'required|in:adm,pre'
         ]);
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->senha])) {
+        if (Auth::guard($request->guard)->attempt(['email' => $request->email, 'password' => $request->senha])) {
             $request->session()->regenerate();
 
             return redirect()->intended('administradores');

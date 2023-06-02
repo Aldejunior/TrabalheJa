@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'prestador',
         ],
+        'adm' => [
+            'driver' => 'session',
+            'provider' => 'administrador',
+        ],
     ],
 
     /*
@@ -68,6 +72,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Prestador::class,
         ],
+        'administrador' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Administrador::class,
+        ],
     ],
 
     /*
@@ -94,6 +102,12 @@ return [
         ],
         'prestador' => [
             'provider' => 'prestador',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'administrador' => [
+            'provider' => 'administrador',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

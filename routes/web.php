@@ -20,30 +20,39 @@ use App\Http\Controllers\AdministradorController;
 //Site
 
 Route::get('/', [SiteController::class, 'home'])->name('site.home');
-Route::get('/entrar', [SiteController::class, 'login'])->name('site.login');
+Route::get('/entrar', [SiteController::class, 'login'])->name('login');
 
 Route::post('/entrar',  [SiteController::class, 'store_login'])->name('site.login.store');
 Route::get('/sair', [SiteController::class, 'logout'])->name('site.login.logout');
 
-//Administrador
 
-Route::get('/administradores', [AdministradorController::class, 'index'])->name('administradores.index');
-Route::get('/administradores/novo', [AdministradorController::class, 'create'])->name('administradores.create');
-Route::get('/administradores/editar/{administrador}', [AdministradorController::class, 'editar'])->name('administradores.editar');
-Route::get('/administradores/{administrador}', [AdministradorController::class, 'show'])-> name('administradores.show');
-Route::post('/administradores', [AdministradorController::class, 'store'])->name('administradores.store');
-Route::delete('/administrador/{administrador}', [AdministradorController::class, 'destroy'])->name('administradores.destroy');
-Route::put('/administradores/{administrador}', [AdministradorController::class, 'update'])->name('administradores.update');
+Route::middleware('auth:adm')->group(function () {
+    //
+    //Administrador
+    //
+    Route::get('/administradores', [AdministradorController::class, 'index'])->name('administradores.index');
+    Route::get('/administradores/novo', [AdministradorController::class, 'create'])->name('administradores.create');
+    Route::get('/administradores/editar/{administrador}', [AdministradorController::class, 'editar'])->name('administradores.editar');
+    Route::get('/administradores/{administrador}', [AdministradorController::class, 'show'])->name('administradores.show');
+    Route::post('/administradores', [AdministradorController::class, 'store'])->name('administradores.store');
+    Route::delete('/administrador/{administrador}', [AdministradorController::class, 'destroy'])->name('administradores.destroy');
+    Route::put('/administradores/{administrador}', [AdministradorController::class, 'update'])->name('administradores.update');
 
-// Prestador
+    //
+    // Prestadores
+    //
 
-Route::get('/prestadores', [PrestadoresController::class, 'index'])->name('prestadores.index');
-Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name('prestadores.create');
-Route::get('/prestadores/{prestador}', [PrestadoresController::class, 'show'])->name('prestadores.show');
-Route::get('/prestadores/editar/{prestador}', [PrestadoresController::class, 'editar'])->name('prestadores.editar');
-Route::post('/prestadores', [PrestadoresController::class, 'store'])->name('prestadores.store');
-Route::put('/prestadores/{prestador}', [PrestadoresController::class, 'update'])->name('prestadores.update');
-Route::delete('/prestadores/{prestador}', [PrestadoresController::class, 'destroy'])->name('prestadores.destroy');
+    Route::get('/prestadores', [PrestadoresController::class, 'index'])->name('prestadores.index');
+});
+
+Route::middleware('auth:adm,pre')->group(function () {
+    Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name('prestadores.create');
+    Route::get('/prestadores/{prestador}', [PrestadoresController::class, 'show'])->name('prestadores.show');
+    Route::get('/prestadores/editar/{prestador}', [PrestadoresController::class, 'editar'])->name('prestadores.editar');
+    Route::post('/prestadores', [PrestadoresController::class, 'store'])->name('prestadores.store');
+    Route::put('/prestadores/{prestador}', [PrestadoresController::class, 'update'])->name('prestadores.update');
+    Route::delete('/prestadores/{prestador}', [PrestadoresController::class, 'destroy'])->name('prestadores.destroy');
+});
 
 // Serviço  fazer no final de semana
 

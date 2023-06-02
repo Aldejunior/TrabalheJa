@@ -21,7 +21,7 @@
                         <h4 class="text-white">Menu</h4>
                         <ul class="list-unstyled">
                             <li><a href="{{ route('prestadores.create') }}" class="text-white">Cadastre-se</a></li>
-                            <li><a href="{{ route('site.login') }}" class="text-white">Login</a></li>
+                            <li><a href="{{ route('login') }}" class="text-white">Login</a></li>
                         </ul>
                     </div>
                 </div>
