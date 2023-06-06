@@ -101,6 +101,13 @@ class PrestadoresController extends Controller
         ]);
 
         return redirect()->route('prestadores.show', $prestador->id);
+
+    }
+
+    public function home(Prestador $prestador)
+    {
+        $prestadores = Prestador::all();
+        return view('prestadores.home', compact('prestadores'));
     }
 
 
