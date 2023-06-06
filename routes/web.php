@@ -25,16 +25,37 @@ Route::get('/entrar', [SiteController::class, 'login'])->name('login');
 Route::post('/entrar',  [SiteController::class, 'store_login'])->name('site.login.store');
 Route::get('/sair', [SiteController::class, 'logout'])->name('site.login.logout');
 
+//prestador
+
+Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name('prestadores.create');
+Route::post('/prestadores', [PrestadoresController::class, 'store'])->name('prestadores.store');
+
+
+// Serviços
+
+Route::get('/servicos', [ServicosController::class, 'index'])->name('servicos.index');
+Route::get('/servicos/{servico}', [ServicosController::class, 'show'])->name('servicos.show');
+
+// Prestador Serviço
+
+Route::post('/prestadores/servico', [PrestadoresController::class, 'StorePrestadorServico'])->name('prestadores.servicos.store');
+
+
+// Contato
+
+Route::get('/servico/lista/{servico}',[ContatoController::class, 'index'])->name('contatos.index');
+Route::get('/perfil/{prestador}', [ContatoController::class, 'show'])->name('contatos.show');
+
+Route::get('/administradores/novo', [AdministradorController::class, 'create'])->name('administradores.create');
+Route::post('/administradores', [AdministradorController::class, 'store'])->name('administradores.store');
 
 Route::middleware('auth:adm')->group(function () {
     //
     //Administrador
     //
     Route::get('/administradores', [AdministradorController::class, 'index'])->name('administradores.index');
-    Route::get('/administradores/novo', [AdministradorController::class, 'create'])->name('administradores.create');
     Route::get('/administradores/editar/{administrador}', [AdministradorController::class, 'editar'])->name('administradores.editar');
     Route::get('/administradores/{administrador}', [AdministradorController::class, 'show'])->name('administradores.show');
-    Route::post('/administradores', [AdministradorController::class, 'store'])->name('administradores.store');
     Route::delete('/administrador/{administrador}', [AdministradorController::class, 'destroy'])->name('administradores.destroy');
     Route::put('/administradores/{administrador}', [AdministradorController::class, 'update'])->name('administradores.update');
 
@@ -63,21 +84,3 @@ Route::middleware('auth:adm,pre')->group(function () {
     Route::delete('/prestadores/{prestador}', [PrestadoresController::class, 'destroy'])->name('prestadores.destroy');
 });
 
-Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name('prestadores.create');
-Route::post('/prestadores', [PrestadoresController::class, 'store'])->name('prestadores.store');
-
-
-// Serviços
-
-Route::get('/servicos', [ServicosController::class, 'index'])->name('servicos.index');
-Route::get('/servicos/{servico}', [ServicosController::class, 'show'])->name('servicos.show');
-
-// Prestador Serviço
-
-Route::post('/prestadores/servico', [PrestadoresController::class, 'StorePrestadorServico'])->name('prestadores.servicos.store');
-
-
-// Contato
-
-Route::get('/servico/lista/{servico}',[ContatoController::class, 'index'])->name('contatos.index');
-Route::get('/perfil/{prestador}', [ContatoController::class, 'show'])->name('contatos.show');

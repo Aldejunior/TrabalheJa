@@ -15,7 +15,6 @@ return [
 
     'defaults' => [
         'guard' => 'pre',
-        'guard' => 'adm',
         'passwords' => 'users',
     ],
 
