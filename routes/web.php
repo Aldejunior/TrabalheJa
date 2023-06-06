@@ -78,6 +78,8 @@ Route::middleware('auth:adm')->group(function () {
 });
 
 Route::middleware('auth:adm,pre')->group(function () {
+
+    Route::get('/prestadores/home', [PrestadoresController::class, 'home'])->name('prestadores.home');
     Route::get('/prestadores/{prestador}', [PrestadoresController::class, 'show'])->name('prestadores.show');
     Route::get('/prestadores/editar/{prestador}', [PrestadoresController::class, 'editar'])->name('prestadores.editar');
     Route::put('/prestadores/{prestador}', [PrestadoresController::class, 'update'])->name('prestadores.update');
