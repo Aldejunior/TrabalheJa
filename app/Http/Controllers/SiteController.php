@@ -11,7 +11,6 @@ class SiteController extends Controller
     {
 
         $servicos = Servico::all();
-
         return view('site.home' , compact('servicos'));
 
     }
@@ -44,6 +43,6 @@ class SiteController extends Controller
     {
         Auth::logout();
 
-        return redirect()->route('site.login');
+        return redirect()->route('site.home');
     }
 }

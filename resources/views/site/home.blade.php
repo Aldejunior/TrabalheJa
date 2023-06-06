@@ -67,10 +67,15 @@
                     <p class="lead text-muted"><b>O Trabalhe Já tem como objetivo facilitar a rotina dos usuários
                             conectando vários individuos, tais como empresas, empreendedores independentes e
                             clientes.</b></p>
-                    <p>
+                    <div class="container">
                         <a href="{{route('servicos.index')}}" class="btn btn-primary my-2">Serviços</a>
-                        <a href="#" class="btn btn-secondary my-2">Amo o victor</a>
-                    </p>
+                        @foreach ($servicos as $servico )
+
+                            <a href="{{route('contato.index', $servico->id)}}" class="btn btn-secondary my-2">$servico->titulo</a>
+
+                        @endforeach
+
+                    </div>
                 </div>
             </div>
         </section>
@@ -79,29 +84,26 @@
 
             <div class="container mb-3">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            @foreach ($servicos as $servico )
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="{{ asset('imagens/mecanico.jpeg') }}"width="100%" height="225">
-                            <div class="card-body">
-                                        <p class="card-text">
-                                            {{$servico->titulo}}
-                                            {{$servico->descricao}}
-                                        </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Contato</button>
-
-                                    </div>
-
+                    @foreach ($servicos as $servico )
+                            <div class="col">
+                                <div class="card shadow-sm">
+                                    <img src="{{ asset('imagens/mecanico.jpeg') }}"width="100%" height="225">
+                                            <div class="card-body">
+                                                    <p class="card-text">
+                                                        {{$servico->titulo}}
+                                                        {{$servico->descricao}}
+                                                    </p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                    <a href="{{route('cotatos.index', $servico->id)}}"><button type="button" class="btn btn-sm btn-outline-secondary">Contato</button></a>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
-
-                        </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
+        </div>
 
     </main>
 

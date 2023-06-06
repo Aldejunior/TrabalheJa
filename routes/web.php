@@ -5,6 +5,7 @@ use App\Http\Controllers\PrestadoresController;
 use App\Http\Controllers\ServicosController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\AdministradorController;
+use App\Http\Controllers\ContatoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,6 @@ use App\Http\Controllers\AdministradorController;
 
 Route::get('/', [SiteController::class, 'home'])->name('site.home');
 Route::get('/entrar', [SiteController::class, 'login'])->name('login');
-
 Route::post('/entrar',  [SiteController::class, 'store_login'])->name('site.login.store');
 Route::get('/sair', [SiteController::class, 'logout'])->name('site.login.logout');
 
@@ -43,27 +43,41 @@ Route::middleware('auth:adm')->group(function () {
     //
 
     Route::get('/prestadores', [PrestadoresController::class, 'index'])->name('prestadores.index');
+
+    //
+    // servicos
+    //
+
+    Route::get('/servicos/cadastro', [ServicosController::class, 'create'])->name('servicos.create');
+    Route::post('/servicos', [ServicosController::class, 'store'])->name('servicos.store');
+    Route::get('/servicos/editar/{servico}', [ServicosController::class, 'editar'])->name('servicos.editar');
+    Route::put('/servicos/{servico}', [ServicosController::class, 'update'])->name('servicos.update');
+    Route::delete('/servicos/{servico}', [ServicosController::class, 'destroy'])->name('servicos.destroy');
+
 });
 
 Route::middleware('auth:adm,pre')->group(function () {
-    Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name('prestadores.create');
     Route::get('/prestadores/{prestador}', [PrestadoresController::class, 'show'])->name('prestadores.show');
     Route::get('/prestadores/editar/{prestador}', [PrestadoresController::class, 'editar'])->name('prestadores.editar');
-    Route::post('/prestadores', [PrestadoresController::class, 'store'])->name('prestadores.store');
     Route::put('/prestadores/{prestador}', [PrestadoresController::class, 'update'])->name('prestadores.update');
     Route::delete('/prestadores/{prestador}', [PrestadoresController::class, 'destroy'])->name('prestadores.destroy');
 });
 
-// Serviço  fazer no final de semana
+Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name('prestadores.create');
+Route::post('/prestadores', [PrestadoresController::class, 'store'])->name('prestadores.store');
+
+
+// Serviços
 
 Route::get('/servicos', [ServicosController::class, 'index'])->name('servicos.index');
-Route::get('/servicos/cadastro', [ServicosController::class, 'create'])->name('servicos.create');
-Route::post('/servicos', [ServicosController::class, 'store'])->name('servicos.store');
-Route::put('/servicos/{servico}', [ServicosController::class, 'update'])->name('servicos.update');
-Route::delete('/servicos/{servico}', [ServicosController::class, 'destroy'])->name('servicos.destroy');
 Route::get('/servicos/{servico}', [ServicosController::class, 'show'])->name('servicos.show');
-Route::get('/servicos/editar/{servico}', [ServicosController::class, 'editar'])->name('servicos.editar');
 
 // Prestador Serviço
 
 Route::post('/prestadores/servico', [PrestadoresController::class, 'StorePrestadorServico'])->name('prestadores.servicos.store');
+
+
+// Contato
+
+Route::get('/servico/lista/{servico}',[ContatoController::class, 'index'])->name('contatos.index');
+Route::get('/perfil/{prestador}', [ContatoController::class, 'show'])->name('contatos.show');
