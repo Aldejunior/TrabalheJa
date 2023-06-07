@@ -22,7 +22,7 @@
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Menu</h4>
                         <ul class="list-unstyled">
-                            <li><a href="{{ route('prestadores.show', $prestador->id)}}" class="text-white">Perfil</a></li>
+                            <li><a href="{{ route('prestadores.show' , $prestador->id)}}" class="text-white">Perfil</a></li>
                             <li><a href="{{ route('site.login.logout') }}" class="text-white">Logout</a></li>
                         </ul>
                     </div>

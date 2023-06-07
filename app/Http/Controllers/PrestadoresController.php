@@ -22,6 +22,12 @@ class PrestadoresController extends Controller
         return view('prestadores.show', compact('prestador', 'servicos'));
     }
 
+    public function home()
+    {
+         $prestadores = Prestador::all();
+        return view('prestadores.home', compact('prestador'));
+    }
+
     public function create()
     {
         return view('prestadores.create');
@@ -104,11 +110,6 @@ class PrestadoresController extends Controller
 
     }
 
-    public function home(Prestador $prestador)
-    {
-        $prestadores = Prestador::all();
-        return view('prestadores.home', compact('prestadores'));
-    }
 
 
 };

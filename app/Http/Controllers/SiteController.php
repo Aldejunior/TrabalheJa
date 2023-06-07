@@ -17,7 +17,7 @@ class SiteController extends Controller
 
     public function login()
     {
-        return view('site.login');
+        return view('prestadores.home');
     }
 
     public function store_login(Request $request)
@@ -31,7 +31,7 @@ class SiteController extends Controller
         if (Auth::guard($request->guard)->attempt(['email' => $request->email, 'password' => $request->senha])) {
             $request->session()->regenerate();
 
-            return redirect()->intended('administradores');
+            return redirect()->intended('administrador');
         }
 
         return back()->withErrors([
