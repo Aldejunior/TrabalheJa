@@ -11,18 +11,20 @@
                 <td>Prestador</td>
                 <td>Valor</td>
                 <td>Cidade</td>
+                <td>Escolha</td>
             </tr>
         </thead>
         <tbody>
-            @foreach ($servico->prestador as $prestador)
+            @foreach ($servico->prestadores as $prestador)
                 <tr>
-                    <td>{{ $prestador->pivot->nome }}</td>
-                    <td>{{ $prestador->pivot->valor}}</td>
-                    <td>{{ $prestador->pivot->cidade}}</td>
+                    <td>{{ $prestador->nome }}</td>
+                    <td>{{ $prestador->pivot->valor }}</td>
+                    <td>{{ $prestador->pivot->cidade }}</td>
+                    <td><a class="btn btn-primary mb-1" href="{{route('site.prestador', $prestador->id)}}">ver</a></td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 
-    <a href="{{ route('servicos.index') }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
+    <a href="{{ route('site.home') }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
 @endsection

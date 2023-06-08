@@ -26,7 +26,6 @@ Route::post('/entrar',  [SiteController::class, 'store_login'])->name('site.logi
 Route::get('/sair', [SiteController::class, 'logout'])->name('site.login.logout');
 Route::get('/Servicos', [SiteController::class, 'servicos'])->name('site.servicos');
 Route::get('/servico/{servico}', [SiteController::class, 'servico'])->name('site.servico');
-
 //prestador
 
 Route::get('/prestadores/novo', [PrestadoresController::class, 'create'])->name('prestadores.create');
@@ -78,9 +77,9 @@ Route::middleware('auth:adm,pre')->group(function () {
     Route::get('/prestadores/editar/{prestador}', [PrestadoresController::class, 'editar'])->name('prestadores.editar');
     Route::put('/prestadores/{prestador}', [PrestadoresController::class, 'update'])->name('prestadores.update');
     Route::delete('/prestadores/{prestador}', [PrestadoresController::class, 'destroy'])->name('prestadores.destroy');
-    Route::get('/prestadores/resgistro', [PrestadoresController::class, 'registro'])->name('prestadores.resgistro');
-
-
+    Route::get('/resgistro/{prestador}', [PrestadoresController::class, 'registro'])->name('prestadores.registro');
 
 });
 
+Route::get('/prestadores/{prestador}', [SiteController::class, 'prestador'])->name('site.prestador');
+Route::get('https://wa.me/{prestador}', [SiteController::class, 'contato'])->name('site.contato');

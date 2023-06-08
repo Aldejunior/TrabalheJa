@@ -10,11 +10,6 @@
         </div>
         <div class="card mb-1">
             <div class="card-body">
-                <p>Cpf/Cnpj: {{ $prestador->cpf_cnpj }}</p>
-            </div>
-        </div>
-        <div class="card mb-1">
-            <div class="card-body">
                 <p>Contato: {{ $prestador->telefone }}</p>
             </div>
         </div>
@@ -28,15 +23,15 @@
                 <li>
                     {{ $servico->titulo }}
                     <ul>
-                        <li>{{ $servico->pivot->valor }}</li>
-                        <li>{{ $servico->pivot->cidade }}</li>
-                        <li>{{ $servico->pivot->cep }}</li>
-                        <li>{{ $servico->pivot->estado }}</li>
+                        <li>Valor: {{ $servico->pivot->valor }}</li>
+                        <li>Cidade: {{ $servico->pivot->cidade }}</li>
+                        <li>CEP: {{ $servico->pivot->cep }}</li>
+                        <li>Estado: {{ $servico->pivot->estado }}</li>
                     </ul>
                 </li>
             @endforeach
         </ul>
     </div>
-    <a href="{{ route('prestadores.editar', $prestador->id) }}"><button class="w-100 btn btn-lg btn-primary mb-3" type="button">Editar</button></a>
-    <a href="{{ route('prestadores.home') }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Voltar</button></a>
+    <a href="{{ route('site.contato', $prestador->telefone) }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Contato</button></a>
+    <a href="{{ route('site.servico', $servico->id) }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Voltar</button></a>
 @endsection

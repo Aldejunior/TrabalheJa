@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Servico;
+use App\Models\Prestador;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,6 +19,10 @@ class SiteController extends Controller
     public function login()
     {
         return view('site.login');
+    }
+    public function contato(prestador $prestador)
+    {
+        return view();
     }
 
     public function store_login(Request $request)
@@ -60,7 +65,14 @@ class SiteController extends Controller
     public function servico(Servico $servico)
     {
         $servico->load('prestadores');
-
         return view('site.servico', compact('servico'));
     }
+    public function prestador(prestador $prestador)
+    {
+        $prestador->load('servicos');
+
+        return view('site.prestador', compact('prestador'));
+    }
+
+
 }

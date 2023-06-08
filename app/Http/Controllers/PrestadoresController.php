@@ -37,7 +37,9 @@ class PrestadoresController extends Controller
 
     public function registro()
     {
-        return view('prestadores.registro');
+        $prestador = Auth::user();
+        $servicos = Servico::all();
+        return view('prestadores.registro', compact('prestador', 'servicos'));
     }
 
     public function editar(Prestador $prestador)

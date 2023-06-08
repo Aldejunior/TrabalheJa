@@ -1,3 +1,6 @@
+@extends('layout.admin')
+
+@section('conteudo')
 <form action="{{ route('prestadores.servicos.store') }}" method="post" class="containner mb-3">
     @csrf
 
@@ -63,3 +66,5 @@
     </div>
     <button class="w-100 btn btn-lg btn-success" type="submit">Cadastrar</button>
 </form>
+<a href="{{ route('prestadores.home') }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Voltar</button></a>
+@endsection

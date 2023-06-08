@@ -11,25 +11,10 @@
 <body>
 
     <header>
-        <div class="collapse bg-dark" id="navbarHeader">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8 col-md-7 py-4">
-                    </div>
-                    <div class="col-sm-4 offset-md-1 py-4">
-                        <h4 class="text-white">Menu</h4>
-                        <ul class="list-unstyled">
-                            <li></li>
-                            <li><a href="{{ route('site.login.logout') }}" class="text-white">Logout</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="navbar navbar-dark bg-dark shadow-sm">
             <div class="container">
-                <a href="{{ route('site.home') }}" class="navbar-brand d-flex align-items-center">
+                <a href="{{ route('prestadores.home') }}" class="navbar-brand d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         aria-hidden="true" class="me-2" ContatoBox="0 0 24 24">
@@ -49,20 +34,20 @@
                     </nav>
 
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
-                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
             </div>
         </div>
 
     </header>
     <main>
-    <a href="{{ route('prestadores.show', $prestador->id) }}" class="text-white">Perfil</a>
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1 class="fw-light"><b>Trabalhe Já</b></h1>
+
+                    <a class="btn btn-success" href="{{route('prestadores.show', $prestador->id)}}">Perfil</a>
+                    <a class="btn btn-success" href="{{route('prestadores.registro', $prestador->id)}}">Registro</a>
+                    <a class="btn btn-warning" href="{{route('site.login.logout')}}">Logout</a>
                     <p class="lead text-muted">
                         <b>
                             O Trabalhe Já tem como objetivo facilitar a rotina dos usuários
@@ -70,6 +55,7 @@
                             clientes.
                         </b>
                     </p>
+
                     <div class="container">
                         <a href="{{ route('site.servicos') }}" class="btn btn-primary my-2">Serviços</a>
                         @foreach ($servicos as $servico)
@@ -95,14 +81,13 @@
                                         {{ $servico->titulo}}
                                         {{ $servico->descricao }}
                                     </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <a href="{{ route('site.servico', $servico->id) }}"><button type="button"
-                                                    class="btn btn-sm btn-outline-secondary">Contato</button></a>
+
+                                        <div class="btn-group d-flex justify-content-between align-items-center">
+                                            <a href="{{ route('site.servico', $servico->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">Contato</button></a>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
+                        </div>
                     @endforeach
                 </div>
             </div>

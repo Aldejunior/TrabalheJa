@@ -24,14 +24,11 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('servicos.index') }}">Serviços</a>
+                            <a class="nav-link" href="{{ route('site.servicos') }}">Serviços</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('prestadores.create') }}">Prestadores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('servicos.index') }}">administradores</a>
                         </li>
                     </ul>
                 </div>

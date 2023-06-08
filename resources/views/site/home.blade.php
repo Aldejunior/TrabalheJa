@@ -16,6 +16,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
+
                     </div>
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Menu</h4>
@@ -81,32 +82,27 @@
         </section>
 
         <div class="album py-5 bg-light">
-
-            <div class="container mb-3">
+            <div class="container mb-3 ">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                            @foreach ($servicos as $servico )
-                                <div class="col">
-                                    <div class="card shadow-sm mb-3">
-                                        <img src="{{ asset('imagens/mecanico.jpeg') }}"width="100%" height="225">
-                                                <div class="card-body">
-                                                        <p class="card-text">
-                                                            {{$servico->titulo}}
-                                                            {{$servico->descricao}}
-                                                        </p>
-                                                </div>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                <div class="btn-group">
-                                                        <a href="{{route('site.servico', $servico->id)}}"><button type="button" class="btn btn-sm btn-outline-secondary">Contato</button></a>
-                                                </div>
-                                                </div>
-
-                                @endforeach
+                    @foreach ($servicos as $servico )
+                        <div class="col">
+                            <div class="card shadow-sm mb-3">
+                                <img src="{{ asset('imagens/mecanico.jpeg') }}"width="100%" height="225">
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            {{$servico->titulo}}
+                                            {{$servico->descricao}}
+                                        </p>
                                     </div>
-                                </div>
+                                    <div class="btn-group d-flex justify-content-between align-items-center">
+                                        <a href="{{route('site.servico', $servico->id)}}"><button type="button" class="btn btn-sm btn-outline-secondary">Contato</button></a>
+                                    </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-
     </main>
 
     <footer class="text-muted py-5">
