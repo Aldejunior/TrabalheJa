@@ -17,7 +17,7 @@ class SiteController extends Controller
 
     public function login()
     {
-        return view('prestadores.home');
+        return view('site.login');
     }
 
     public function store_login(Request $request)
@@ -28,10 +28,14 @@ class SiteController extends Controller
             'guarda' => 'required|in:adm,pre'
         ]);
 
-        if (Auth::guard($request->guard)->attempt(['email' => $request->email, 'password' => $request->senha])) {
+        if (Auth::guard($request->guarda)->attempt(['email' => $request->email, 'password' => $request->senha])) {
             $request->session()->regenerate();
 
-            return redirect()->intended('administrador');
+            if($request->guarda == 'pre'){
+                return redirect()->route('prestadores.home');
+            } else {
+                return redirect()->route('administradores.index');
+            }
         }
 
         return back()->withErrors([
@@ -44,5 +48,19 @@ class SiteController extends Controller
         Auth::logout();
 
         return redirect()->route('site.home');
+    }
+
+    public function servicos()
+    {
+        $servicos = Servico::all();
+
+        return view('site.servicos', compact('servicos'));
+    }
+
+    public function servico(Servico $servico)
+    {
+        $servico->load('prestadores');
+
+        return view('site.servico', compact('servico'));
     }
 }

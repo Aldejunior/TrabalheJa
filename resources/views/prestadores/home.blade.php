@@ -12,9 +12,6 @@
 
     <header>
         <div class="collapse bg-dark" id="navbarHeader">
-
-            <h2>Bem-vindo a página do Prestador</h2>
-
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
@@ -22,7 +19,7 @@
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Menu</h4>
                         <ul class="list-unstyled">
-                            <li><a href="{{ route('prestadores.show' , $prestador->id)}}" class="text-white">Perfil</a></li>
+                            <li></li>
                             <li><a href="{{ route('site.login.logout') }}" class="text-white">Logout</a></li>
                         </ul>
                     </div>
@@ -32,7 +29,7 @@
 
         <div class="navbar navbar-dark bg-dark shadow-sm">
             <div class="container">
-                <a href="{{ route( 'site.home' ) }}" class="navbar-brand d-flex align-items-center">
+                <a href="{{ route('site.home') }}" class="navbar-brand d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         aria-hidden="true" class="me-2" ContatoBox="0 0 24 24">
@@ -61,20 +58,23 @@
 
     </header>
     <main>
-
+    <a href="{{ route('prestadores.show', $prestador->id) }}" class="text-white">Perfil</a>
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1 class="fw-light"><b>Trabalhe Já</b></h1>
-                    <p class="lead text-muted"><b>O Trabalhe Já tem como objetivo facilitar a rotina dos usuários
+                    <p class="lead text-muted">
+                        <b>
+                            O Trabalhe Já tem como objetivo facilitar a rotina dos usuários
                             conectando vários individuos, tais como empresas, empreendedores independentes e
-                            clientes.</b></p>
+                            clientes.
+                        </b>
+                    </p>
                     <div class="container">
-                        <a href="{{route('servicos.index')}}" class="btn btn-primary my-2">Serviços</a>
-                        @foreach ($servicos as $servico )
-
-                            <a href="{{route('contato.index', $servico->id)}}" class="btn btn-secondary my-2">$servico->titulo</a>
-
+                        <a href="{{ route('site.servicos') }}" class="btn btn-primary my-2">Serviços</a>
+                        @foreach ($servicos as $servico)
+                            <a href="{{ route('site.servico', $servico->id) }}"
+                                class="btn btn-secondary my-2">{{$servico->titulo}}</a>
                         @endforeach
 
                     </div>
@@ -86,20 +86,21 @@
 
             <div class="container mb-3">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    @foreach ($servicos as $servico )
-                            <div class="col">
-                                <div class="card shadow-sm">
-                                    <img src="{{ asset('imagens/mecanico.jpeg') }}"width="100%" height="225">
-                                            <div class="card-body">
-                                                    <p class="card-text">
-                                                        {{$servico->titulo}}
-                                                        {{$servico->descricao}}
-                                                    </p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                    <a href="{{route('cotatos.index', $servico->id)}}"><button type="button" class="btn btn-sm btn-outline-secondary">Contato</button></a>
-                                            </div>
+                    @foreach ($servicos as $servico)
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <img src="{{ asset('imagens/mecanico.jpeg') }}"width="100%" height="225">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        {{ $servico->titulo}}
+                                        {{ $servico->descricao }}
+                                    </p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <a href="{{ route('site.servico', $servico->id) }}"><button type="button"
+                                                    class="btn btn-sm btn-outline-secondary">Contato</button></a>
                                         </div>
+                                    </div>
                                 </div>
                             </div>
                     @endforeach

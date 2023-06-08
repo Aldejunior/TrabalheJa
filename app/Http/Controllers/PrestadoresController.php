@@ -16,16 +16,18 @@ class PrestadoresController extends Controller
         return view('prestadores.index', compact('prestadores'));
     }
 
-    public function show(prestador $prestador)
+    public function show()
     {
+        $prestador = Auth::user();
         $servicos = Servico::all();
         return view('prestadores.show', compact('prestador', 'servicos'));
     }
 
     public function home()
     {
-         $prestadores = Prestador::all();
-        return view('prestadores.home', compact('prestador'));
+        $prestador = Auth::user();
+        $servicos = Servico::all();
+        return view('prestadores.home', compact('prestador', 'servicos'));
     }
 
     public function create()
@@ -59,7 +61,7 @@ class PrestadoresController extends Controller
 
         $prestador->save();
 
-        return redirect()->route('site.home');
+        return redirect()->route('prestadores.home');
     }
 
     public function update(Prestador $prestador, Request $request)
