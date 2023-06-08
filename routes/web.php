@@ -78,6 +78,9 @@ Route::middleware('auth:adm,pre')->group(function () {
     Route::get('/prestadores/editar/{prestador}', [PrestadoresController::class, 'editar'])->name('prestadores.editar');
     Route::put('/prestadores/{prestador}', [PrestadoresController::class, 'update'])->name('prestadores.update');
     Route::delete('/prestadores/{prestador}', [PrestadoresController::class, 'destroy'])->name('prestadores.destroy');
+    Route::get('/prestadores/resgistro', [PrestadoresController::class, 'registro'])->name('prestadores.resgistro');
+
+
 
 });
 

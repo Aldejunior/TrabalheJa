@@ -35,6 +35,11 @@ class PrestadoresController extends Controller
         return view('prestadores.create');
     }
 
+    public function registro()
+    {
+        return view('prestadores.registro');
+    }
+
     public function editar(Prestador $prestador)
     {
         return view('prestadores.editar', compact('prestador'));
