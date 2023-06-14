@@ -20,11 +20,11 @@
                 <td>{{ $administrador->email }}</td>
 
                 <td>
-                    <a class="btn btn-primary mb-1" href="{{ route('administradores.editar', $administrador->id) }}">Editar</a>
+                    <a class="btn btn-primary mb-1" href="{{ route('administradores.editar', $administrador->id) }}"><i class="bi bi-pencil-fill"></i></a>
                     <form action="{{ route('administradores.destroy', $administrador->id) }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-danger" type="submit">Deletar</button>
+                        <button class="btn btn-danger" type="submit"><i class="bi bi-trash3"></i></button>
                     </form>
                 </td>
             </tr>
