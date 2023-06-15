@@ -106,7 +106,7 @@ class PrestadoresController extends Controller
             'estado' => 'required',
         ]);
 
-        $prestador = Prestador::find(1);
+        $prestador = Auth::user();
 
         $prestador->servicos()->attach($requisicao->servico_id, [
             'valor' => $requisicao->valor,

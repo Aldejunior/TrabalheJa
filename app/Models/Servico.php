@@ -19,6 +19,8 @@ class Servico extends Model
 
     public function prestadores()
     {
-        return $this->belongsToMany(Prestador::class, 'prestador_servico', 'servico_id', 'prestador_id');
+        return $this->belongsToMany(Prestador::class, 'prestador_servico', 'servico_id', 'prestador_id')
+        ->withPivot('valor', 'cidade', 'estado', 'cep')
+        ->withTimestamps();
     }
 }

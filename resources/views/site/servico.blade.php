@@ -18,7 +18,7 @@
             @foreach ($servico->prestadores as $prestador)
                 <tr>
                     <td>{{ $prestador->nome }}</td>
-                    <td>{{ $prestador->pivot->valor }}</td>
+                    <td>R$ {{ number_format($prestador->pivot->valor, '2', ',', '.') }}</td>
                     <td>{{ $prestador->pivot->cidade }}</td>
                     <td><a class="btn btn-primary mb-1" href="{{route('site.prestador', $prestador->id)}}">ver</a></td>
                 </tr>
