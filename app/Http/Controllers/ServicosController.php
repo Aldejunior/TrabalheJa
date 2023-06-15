@@ -35,13 +35,19 @@ class ServicosController extends Controller
         $requisicao->validate([
             'titulo' => 'required',
             'descricao' => 'required',
-
+            'imagem' => 'required|image|mimes:png,jpg,jpeg|max:2048'
         ]);
 
         $servico = new servico();
 
         $servico->titulo = $requisicao->titulo;
         $servico->descricao = $requisicao->descricao;
+        $servico->imagem = '';
+
+        if($requisicao->hasFile('imagem')){
+            $imagem = $requisicao->file('imagem')->store('servicos', ['disk' => 'public']);
+            $servico->imagem = $imagem;
+        }
 
         $servico->save();
 
@@ -57,6 +63,11 @@ class ServicosController extends Controller
 
         $servico->titulo = $request->titulo;
         $servico->descricao = $request->descricao;
+
+        if($request->hasFile('imagem')){
+            $imagem = $request->file('imagem')->store('servicos', ['disk' => 'public']);
+            $servico->imagem = $imagem;
+        }
 
         $servico->save();
 

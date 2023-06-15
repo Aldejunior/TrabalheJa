@@ -5,6 +5,8 @@
     <h1>{{ $servico->titulo }}</h1>
     <p>{{ $servico->descricao }}</p>
 
+    <img src="/storage/{{ $servico->imagem }}" alt="">
+
     <a href="{{ route('servicos.editar', $servico->id) }}"><button class="w-100 btn btn-lg btn-primary mb-3" type="button">Editar</button></a>
     <form action="{{ route('servicos.destroy', $servico->id) }}" method="post">
         @csrf

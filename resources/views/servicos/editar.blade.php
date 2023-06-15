@@ -25,6 +25,15 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        <div class="mb-3">
+            <label>Imagem:</label>
+            <input type="file" name="imagem" class="form-control">
+        </div>
+
+        @error('imagem')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <button class="w-100 btn btn-lg btn-success" type="submit">Atualizar</button>
     </form>
 

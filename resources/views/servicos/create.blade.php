@@ -1,7 +1,7 @@
 @extends('layout.admin')
 
 @section('conteudo')
-    <form action="{{ route('servicos.store') }}" method="post" class="mb-3">
+    <form action="{{ route('servicos.store') }}" method="post" class="mb-3" enctype="multipart/form-data">
         @csrf
         <h1 class="h3 mb-3 fw-normal">Cadastro de Servico</h1>
 
@@ -20,6 +20,15 @@
         </div>
 
         @error('descricao')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        <div class="mb-3">
+            <label>Imagem:</label>
+            <input type="file" name="imagem" class="form-control">
+        </div>
+
+        @error('imagem')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
