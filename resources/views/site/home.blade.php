@@ -40,16 +40,6 @@
                     </svg>
                     <strong>Trabalhe já</strong>
 
-                    <nav class="navbar">
-                        <div class="container-fluid">
-                            <a class="navbar-brand"></a>
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="🔍" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit" >Pesquisa</button>
-                            </form>
-                        </div>
-                    </nav>
-
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
                     aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,21 +72,23 @@
         </section>
 
         <div class="album py-5 bg-light">
-            <div class="container mb-3 ">
+
+            <div class="container mb-3">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    @foreach ($servicos as $servico )
+                    @foreach ($servicos as $servico)
                         <div class="col">
-                            <div class="card shadow-sm mb-3">
-                                <img src="{{ asset('imagens/mecanico.jpeg') }}"width="100%" height="225">
-                                    <div class="card-body">
-                                        <p class="card-text">
-                                            {{$servico->titulo}}
-                                            {{$servico->descricao}}
-                                        </p>
-                                    </div>
-                                    <div class="btn-group d-flex justify-content-between align-items-center">
-                                        <a href="{{route('site.servico', $servico->id)}}"><button type="button" class="btn btn-sm btn-outline-secondary">Contato</button></a>
-                                    </div>
+                            <div class="card shadow-sm">
+                                <img src="/storage/{{ $servico->imagem }}"  width="100%" height="225">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        {{ $servico->titulo}}
+                                        {{ $servico->descricao }}
+                                    </p>
+
+                                        <div class="btn-group d-flex justify-content-between align-items-center">
+                                            <a href="{{ route('site.servico', $servico->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">Contato</button></a>
+                                        </div>
+                                </div>
                             </div>
                         </div>
                     @endforeach

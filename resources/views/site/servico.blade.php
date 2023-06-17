@@ -1,30 +1,25 @@
-@extends('layout.admin')
+@extends('layout.site')
 
 @section('conteudo')
 
     <h1>{{ $servico->titulo }}</h1>
     <p>{{ $servico->descricao }}</p>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <td>Prestador</td>
-                <td>Valor</td>
-                <td>Cidade</td>
-                <td>Escolha</td>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($servico->prestadores as $prestador)
-                <tr>
-                    <td>{{ $prestador->nome }}</td>
-                    <td>R$ {{ number_format($prestador->pivot->valor, '2', ',', '.') }}</td>
-                    <td>{{ $prestador->pivot->cidade }}</td>
-                    <td><a class="btn btn-primary mb-1" href="{{route('site.prestador', $prestador->id)}}">ver</a></td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+
+
+    @foreach ($servico->prestadores as $prestador)
+    <div class="card mb-3">
+        <h5 class="card-header">{{ $prestador->nome }}</h5>
+        <div class="card-body">
+          <h5 class="card-title">
+            Cidade:{{ $prestador->pivot->cidade }}<br>
+            Valor: R$ {{ number_format($prestador->pivot->valor, '2', ',', '.') }}
+        </h5>
+          <p class="card-text">{{$servico->descricao}}</p>
+          <a href="{{route('site.prestador', $prestador->id)}}" class="btn btn-primary">Ver</a>
+        </div>
+      </div>
+    @endforeach
 
     <a href="{{ route('site.home') }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
 @endsection
