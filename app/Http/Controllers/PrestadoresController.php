@@ -18,7 +18,7 @@ class PrestadoresController extends Controller
 
     public function show()
     {
-        $prestador = Auth::user();
+        $prestador = Auth::guard('pre')->user();
         $prestador->load('servicos');
 
         return view('prestadores.show', compact('prestador'));
@@ -26,7 +26,7 @@ class PrestadoresController extends Controller
 
     public function home()
     {
-        $prestador = Auth::user();
+        $prestador = Auth::guard('pre')->user();
         $servicos = Servico::all();
         return view('prestadores.home', compact('prestador', 'servicos'));
     }
@@ -38,7 +38,7 @@ class PrestadoresController extends Controller
 
     public function registro()
     {
-        $prestador = Auth::user();
+        $prestador = Auth::guard('pre')->user();
         $servicos = Servico::all();
         return view('prestadores.registro', compact('prestador', 'servicos'));
     }
@@ -107,7 +107,7 @@ class PrestadoresController extends Controller
             'estado' => 'required',
         ]);
 
-        $prestador = Auth::user();
+        $prestador = Auth::guard('pre')->user();
 
         $prestador->servicos()->attach($requisicao->servico_id, [
             'valor' => $requisicao->valor,
