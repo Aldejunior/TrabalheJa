@@ -19,8 +19,9 @@ class PrestadoresController extends Controller
     public function show()
     {
         $prestador = Auth::user();
-        $servicos = Servico::all();
-        return view('prestadores.show', compact('prestador', 'servicos'));
+        $prestador->load('servicos');
+
+        return view('prestadores.show', compact('prestador'));
     }
 
     public function home()
