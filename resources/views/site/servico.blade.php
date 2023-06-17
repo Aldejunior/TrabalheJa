@@ -1,15 +1,14 @@
 @extends('layout.site')
 
 @section('conteudo')
-<div class="carousel-item active" data-bs-interval="10000">
-    <img src="/storage/{{ $servico->imagem }}" width="100%" alt="">
-    <div class="carousel-caption d-none d-md-block">
-      <h5>First slide label</h5>
-      <p>Some representative placeholder content for the first slide.</p>
+<div class="shadow p-3 mb-5 bg-body-tertiary rounded position-relative">
+    <img class="img-fluid" src="/storage/{{ $servico->imagem }}" width="100%" height="490" alt="Imagem">
+    <div class="position-absolute bottom-0 start-50 translate-middle-x">
+        <h1 class="text-light display-1">{{ $servico->titulo }}</h1>
     </div>
+</div>
 
-    <h1>{{ $servico->titulo }}</h1>
-    <p>{{ $servico->descricao }}</p>
+    <h3 class="text-center card mb-4">{{ $servico->descricao }}</h3>
 
 
 
