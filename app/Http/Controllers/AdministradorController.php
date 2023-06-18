@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Administrador;
+use App\Models\Prestador;
+use App\Models\Servico;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -70,5 +72,10 @@ class AdministradorController extends Controller
         $administrador->delete();
         return redirect()->route('administradores.index');
     }
+    public function prestador(prestador $prestador)
+    {
+        $prestador->load('servicos');
 
+        return view('administradores.prestador', compact('prestador'));
+    }
 }

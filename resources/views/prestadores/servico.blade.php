@@ -1,4 +1,4 @@
-@extends('layout.site')
+@extends('layout.pres')
 
 @section('conteudo')
     <div class="shadow p-3 mb-5 bg-body-tertiary rounded position-relative container-fluid">
@@ -20,10 +20,10 @@
             Valor: R$ {{ number_format($prestador->pivot->valor, '2', ',', '.') }}
         </h5>
           <p class="card-text">{{$servico->descricao}}</p>
-          <a href="{{route('site.prestador', $prestador->id)}}" class="btn btn-primary">Ver</a>
+          <a href="{{route('prestadores.pres', $prestador->id)}}" class="btn btn-primary">Ver</a>
         </div>
       </div>
     @endforeach
 
-    <a href="{{ route('site.home') }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
+    <a href="{{ route('prestadores.home') }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
 @endsection

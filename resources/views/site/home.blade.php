@@ -22,6 +22,7 @@
                         <h4 class="text-white">Menu</h4>
                         <ul class="list-unstyled">
                             <li><a href="{{ route('prestadores.create') }}" class="text-white">Cadastre-se</a></li>
+                            <li><a href="{{ route('site.servicos') }}" class="text-white">Serviços</a></li>
                             <li><a href="{{ route('login') }}" class="text-white">Login</a></li>
                         </ul>
                     </div>
@@ -32,12 +33,6 @@
         <div class="navbar navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a href="{{ route( 'site.home' ) }}" class="navbar-brand d-flex align-items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
-                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        aria-hidden="true" class="me-2" ContatoBox="0 0 24 24">
-                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                        <circle cx="12" cy="13" r="4" />
-                    </svg>
                     <strong>Trabalhe já</strong>
 
                 </a>
@@ -81,12 +76,12 @@
                                 <img src="/storage/{{ $servico->imagem }}"  width="100%" height="225">
                                 <div class="card-body">
                                     <p class="card-text">
-                                        {{ $servico->titulo}}
+                                        <h2>{{ $servico->titulo}}</h2>
                                         {{ $servico->descricao }}
                                     </p>
 
                                         <div class="btn-group d-flex justify-content-between align-items-center">
-                                            <a href="{{ route('site.servico', $servico->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">Contato</button></a>
+                                            <a href="{{ route('site.servico', $servico->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">Prestadores</button></a>
                                         </div>
                                 </div>
                             </div>

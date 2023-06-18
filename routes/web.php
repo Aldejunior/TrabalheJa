@@ -55,6 +55,7 @@ Route::middleware('auth:adm')->group(function () {
     //
 
     Route::get('/prestadores', [PrestadoresController::class, 'index'])->name('prestadores.index');
+    Route::get('/adm/prestador/{prestador}', [AdministradorController::class, 'prestador'])->name('administradores.prestador');
 
     //
     // servicos
@@ -78,6 +79,11 @@ Route::middleware('auth:adm,pre')->group(function () {
     Route::put('/prestadores/{prestador}', [PrestadoresController::class, 'update'])->name('prestadores.update');
     Route::delete('/prestadores/{prestador}', [PrestadoresController::class, 'destroy'])->name('prestadores.destroy');
     Route::get('/resgistro/{prestador}', [PrestadoresController::class, 'registro'])->name('prestadores.registro');
+    // Route::get('/', [PrestadoresController::class, 'nav'])->name('layout.pres');
+    Route::get('/pres/Servicos', [PrestadoresController::class, 'servicos'])->name('prestadores.servicos');
+    Route::get('/pres/servico/{servico}', [PrestadoresController::class, 'servico'])->name('prestadores.servico');
+    Route::get('/pres/perfil{prestador}', [PrestadoresController::class, 'prestador'])->name('prestadores.pres');
+
 
 });
 

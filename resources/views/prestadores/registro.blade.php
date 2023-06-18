@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.pres')
 
 @section('conteudo')
 <form action="{{ route('prestadores.servicos.store') }}" method="post" class="containner mb-3">
@@ -31,7 +31,6 @@
     @enderror
 
     <div class="row">
-
         <div class="col-6">
             <div class="form-floating mb-3">
                 <input type="text" name="estado" class="form-control">
@@ -41,7 +40,8 @@
             @error('estado')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
-
+        </div>
+        <div class="col-6">
             <div class="form-floating mb-3">
                 <input type="text" name="cep" value="{{ old('cep') }}" class="form-control">
                 <label>CEP:</label>
@@ -50,11 +50,11 @@
             @error('cep')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
-
         </div>
+
     </div>
 
-    <div class="col-6">
+    <div class="form-floating mb-3">
         <div class="form-floating mb-3">
             <input type="text" name="cidade" class="form-control">
             <label>Cidade:</label>

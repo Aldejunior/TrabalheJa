@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.site')
 
 @section('conteudo')
     <form action="{{route('site.login.store')}}" method="post" class="mb-3">

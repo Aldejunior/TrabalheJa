@@ -1,4 +1,4 @@
-@extends('layout.site')
+@extends('layout.pres')
 
 @section('conteudo')
 
@@ -13,7 +13,7 @@
                     <div class="card-body">
                       <h5 class="card-title">{{ $servico->titulo }}</h5>
                       <p class="card-text">{{ $servico->descricao}}</p>
-                      <p class="card-text"><small class="text-body-secondary"><a class="btn btn-primary mb-1" href="{{ route('site.servico', $servico->id) }}">Ver</a></small></p>
+                      <p class="card-text"><small class="text-body-secondary"><a class="btn btn-primary mb-1" href="{{ route('prestadores.servico', $servico->id) }}">Ver</a></small></p>
                     </div>
                   </div>
                 </div>

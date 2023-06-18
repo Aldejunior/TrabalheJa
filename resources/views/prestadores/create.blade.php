@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.site')
 
 @section('conteudo')
     <form action="{{ route('prestadores.store') }}" method="post" class="mb-3">

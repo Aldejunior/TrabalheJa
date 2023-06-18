@@ -1,7 +1,8 @@
 @extends('layout.admin')
 
 @section('conteudo')
-<table class="table table-striped">
+<h1 class="text-center">Serviços</h1>
+{{-- <table class="table table-striped">
     <thead>
         <tr>
             <td>Titulo</td>
@@ -28,6 +29,22 @@
             </tr>
         @endforeach
     </tbody>
-</table>
+</table> --}}
+    @foreach ($servicos as $servico)
+    <div class="card mb-3" style="max-width:100%;">
+        <div class="row g-0">
+        <div class="col-md-4">
+            <img src="/storage/{{ $servico->imagem }}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title">{{ $servico->titulo }}</h5>
+            <p class="card-text">{{ $servico->descricao}}</p>
+            <p class="card-text"><small class="text-body-secondary"><a class="btn btn-primary mb-1" href="{{route('servicos.show', $servico->id)}}"><i class="bi bi-eye"></i></a></small></p>
+            </div>
+        </div>
+        </div>
+    </div>
+    @endforeach
 
 @endsection

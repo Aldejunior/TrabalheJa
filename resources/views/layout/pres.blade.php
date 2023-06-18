@@ -5,13 +5,13 @@
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Trabalhe já </title>
+    <title>Pres | Trabalhe já </title>
     </head>
 
     <body>
             <nav class="navbar navbar-dark bg-dark ">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="{{route('site.home')}}">Trabalhe Já</a>
+                  <a class="navbar-brand" href="{{route('prestadores.home')}}">Trabalhe Já</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
@@ -23,16 +23,19 @@
                     <div class="offcanvas-body">
                       <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="{{route('site.home')}}">Home</a>
+                          <a class="nav-link active" aria-current="page" href="{{route('prestadores.home')}}">Home</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{route('site.servicos')}}">Serviços</a>
+                          <a class="nav-link" href="{{route('prestadores.servicos')}}">Serviços</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('login')}}">Login</a>
+                            <a class="nav-link" href="{{route('prestadores.show', $prestador->id)}}">Perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('prestadores.create')}}">Cadastre-se</a>
+                            <a class="nav-link" href="{{route('prestadores.registro', $prestador->id)}}">Registro</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="{{route('site.login.logout')}}">Logout</a>
                           </li>
                       </ul>
                     </div>
@@ -44,15 +47,14 @@
             <script script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
         <main class="container">
             @yield('conteudo')
-
+            <footer class="text-muted py-5">
+                <div class="container">
+                    <p class="float-end mb-1">
+                    <p class="mb-1">TrabalheJá &copy;</p>
+                    <p class="mb-0">Desenvolvido por: Victor e Aldejunior</p>
+                    <p class="mb-0">Entre em contado conosco: Trabalheja@outlook.com</p>
+                </div>
+            </footer>
         </main>
-        <footer class="text-muted py-5">
-            <div class="container">
-                <p class="float-end mb-1">
-                <p class="mb-1">TrabalheJá &copy;</p>
-                <p class="mb-0">Desenvolvido por: Victor e Aldejunior</p>
-                <p class="mb-0">Entre em contado conosco: Trabalheja@outlook.com</p>
-            </div>
-        </footer>
     </body>
 </html>

@@ -20,7 +20,6 @@ class PrestadoresController extends Controller
     {
         $prestador = Auth::guard('pre')->user();
         $prestador->load('servicos');
-
         return view('prestadores.show', compact('prestador'));
     }
 
@@ -35,6 +34,7 @@ class PrestadoresController extends Controller
     {
         return view('prestadores.create');
     }
+
 
     public function registro()
     {
@@ -120,6 +120,25 @@ class PrestadoresController extends Controller
 
     }
 
+    public function servicos()
+    {
+        $prestador = Auth::guard('pre')->user();
+        $servicos = Servico::all();
 
+        return view('prestadores.servicos', compact('servicos', 'prestador'));
+    }
 
+    public function servico(Servico $servico)
+    {
+        $prestador = Auth::guard('pre')->user();
+        $servico->load('prestadores');
+        return view('prestadores.servico', compact('servico'));
+    }
+
+    public function prestador(prestador $prestador)
+    {
+        $prestador->load('servicos');
+
+        return view('prestadores.pres', compact('prestador'));
+    }
 };

@@ -1,4 +1,4 @@
-@extends('layout.site')
+@extends('layout.admin')
 
 @section('conteudo')
     <h1>{{ $prestador->nome }}</h1>
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="border rounder p-3">
+    <div class="border rounder p-3 mb-3">
         <h1>Meus serviços</h1>
 
         <ul>
@@ -32,6 +32,11 @@
             @endforeach
         </ul>
     </div>
-    <a href="https://wa.me/+55{{ $prestador->telefone }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Contato</button></a>
-    <a href="{{ route('site.servico', $servico->id) }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Voltar</button></a>
+    <a href="https://wa.me/+55{{ $prestador->telefone }}"><button class="w-100 btn btn-lg btn-primary mb-3" type="button">Contato</button></a>
+    <form action="{{ route('prestadores.destroy', $prestador->id) }}" method="post">
+        @csrf
+        @method('DELETE')
+        <button class="w-100 btn btn-lg btn-danger mb-3" type="submit">Deletar</button>
+    </form>
+    <a href="{{ route('administradores.index', $servico->id) }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Voltar</button></a>
 @endsection

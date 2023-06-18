@@ -17,6 +17,8 @@ class ServicosController extends Controller
 
     public function show(Servico $servico)
     {
+        $servico->load('prestadores');
+
         return view('servicos.show', compact('servico'));
     }
 

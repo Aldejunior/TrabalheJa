@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.pres')
 
 @section('conteudo')
     <form action="{{ route('prestadores.update', $prestador->id) }}" method="post" class="mb-3">

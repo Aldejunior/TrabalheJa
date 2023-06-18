@@ -1,4 +1,4 @@
-@extends('layout.site')
+@extends('layout.pres')
 
 @section('conteudo')
     <h1>{{ $prestador->nome }}</h1>
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="border rounder p-3">
+    <div class="border rounder p-3 mb-3">
         <h1>Meus serviços</h1>
 
         <ul>
@@ -33,5 +33,5 @@
         </ul>
     </div>
     <a href="https://wa.me/+55{{ $prestador->telefone }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Contato</button></a>
-    <a href="{{ route('site.servico', $servico->id) }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Voltar</button></a>
+    <a href="{{ route('prestadores.home') }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Voltar</button></a>
 @endsection
