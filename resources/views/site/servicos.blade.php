@@ -21,4 +21,5 @@
 
         @endforeach
 
+        <a href="{{ route('site.home') }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button"><i class="bi bi-arrow-90deg-left"></i>Voltar</button></a>
 @endsection

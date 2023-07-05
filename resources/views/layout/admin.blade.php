@@ -24,16 +24,16 @@
                 <div class="offcanvas-body">
                   <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="{{route('administradores.index')}}">Home</a>
+                      <a class="nav-link active" aria-current="page" href="{{route('administradores.index')}}"><i class="bi bi-house"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{{route('servicos.index')}}">Serviços</a>
+                      <a class="nav-link" href="{{route('servicos.index')}}"><i class="bi bi-wrench-adjustable"></i> Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('prestadores.index')}}">Prestadores</a>
+                        <a class="nav-link" href="{{route('prestadores.index')}}"><i class="bi bi-file-person"></i> Prestadores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('site.login.logout')}}">Logout</a>
+                        <a class="nav-link" href="{{route('site.login.logout')}}"><i class="bi bi-door-closed"></i> Logout</a>
                     </li>
                   </ul>
                 </div>

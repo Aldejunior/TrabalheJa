@@ -21,10 +21,12 @@
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Menu</h4>
                         <ul class="list-unstyled">
-                            <li><a href="{{ route('prestadores.show', $prestador->id) }}" class="text-white">Perfil</a></li>
-                            <li><a href="{{ route('prestadores.registro', $prestador->id) }}" class="text-white">Registro</a></li>
-                            <li><a href="{{ route('site.login.logout') }}" class="text-white">Logout</a></li>
-
+                            <h5>
+                            <li><a href="{{ route('prestadores.show', $prestador->id) }}" class="text-white link-underline-dark"><i class="bi bi-credit-card-2-front"></i> Perfil</a></li>
+                            <li><a href="{{ route('prestadores.registro', $prestador->id) }}" class="text-white link-underline-dark"><i class="bi bi-pencil"></i> Registro</a></li>
+                            <li><a href="{{ route('prestadores.servicos') }}" class="text-white link-underline-dark"><i class="bi bi-wrench-adjustable"></i> Servicos</a></li>
+                            <li><a href="{{ route('site.login.logout') }}" class="text-white link-underline-dark"><i class="bi bi-door-closed"></i> Logout</a></li>
+                            </h5>
                         </ul>
                     </div>
                 </div>
@@ -54,8 +56,7 @@
                     <p class="lead text-muted">
                         <b>
                             O Trabalhe Já tem como objetivo facilitar a rotina dos usuários
-                            conectando vários individuos, tais como empresas, empreendedores independentes e
-                            clientes.
+                            conectando vários individuos, tais como presadores e clientes.
                         </b>
                     </p>
 
@@ -86,7 +87,7 @@
                                     </p>
 
                                         <div class="btn-group d-flex justify-content-between align-items-center">
-                                            <a href="{{ route('prestadores.servico', $servico->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">Contato</button></a>
+                                            <a href="{{ route('prestadores.servico', $servico->id) }}"><button type="button" class="btn btn-sm btn-outline-secondary">Prestadores</button></a>
                                         </div>
                                 </div>
                             </div>

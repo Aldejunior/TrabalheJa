@@ -46,5 +46,5 @@
         <button class="w-100 btn btn-lg btn-success" type="submit">Atualizar</button>
     </form>
 
-    <a href="{{ route('site.home') }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
+    <a href="{{ route('prestadores.home') }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
 @endsection

@@ -25,5 +25,5 @@
       </div>
     @endforeach
 
-    <a href="{{ route('site.home') }}"><button class="w-100 btn btn-lg btn-warning" type="button">Voltar</button></a>
+    <a href="{{ route('site.home') }}"><button class="w-100 btn btn-lg btn-warning" type="button"><i class="bi bi-arrow-90deg-left"></i>Voltar</button></a>
 @endsection

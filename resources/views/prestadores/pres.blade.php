@@ -32,6 +32,6 @@
             @endforeach
         </ul>
     </div>
-    <a href="https://wa.me/+55{{ $prestador->telefone }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Contato</button></a>
+    <a href="https://wa.me/+55{{ $prestador->telefone }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button"><i class="bi bi-whatsapp"></i> Contato</button></a>
     <a href="{{ route('prestadores.home') }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Voltar</button></a>
 @endsection

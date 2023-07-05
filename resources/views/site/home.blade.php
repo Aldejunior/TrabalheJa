@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Trabalhe já </title>
 </head>
 
@@ -21,9 +22,11 @@
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Menu</h4>
                         <ul class="list-unstyled">
-                            <li><a href="{{ route('prestadores.create') }}" class="text-white">Cadastre-se</a></li>
-                            <li><a href="{{ route('site.servicos') }}" class="text-white">Serviços</a></li>
-                            <li><a href="{{ route('login') }}" class="text-white">Login</a></li>
+                            <h5>
+                                <li><a href="{{ route('site.servicos') }}" class="text-white link-underline-dark"><i class="bi bi-wrench-adjustable"></i>Serviços</a></li>
+                                <li><a href="{{ route('prestadores.create') }}" class="text-white link-underline-dark"><i class="bi bi-pencil-square"></i>Cadastre-se</a></li>
+                                <li><a href="{{ route('login') }}" class="text-white link-underline-dark"><i class="bi bi-door-open"></i>Login</a></li>
+                            </h5>
                         </ul>
                     </div>
                 </div>
@@ -51,8 +54,7 @@
                 <div class="col-lg-6 col-md-8 mx-auto">
                     <h1 class="fw-light"><b>Trabalhe Já</b></h1>
                     <p class="lead text-muted"><b>O Trabalhe Já tem como objetivo facilitar a rotina dos usuários
-                            conectando vários individuos, tais como empresas, empreendedores independentes e
-                            clientes.</b></p>
+                            conectando vários individuos, tais como prestadores e clientes.</b></p>
                     <div class="container">
                         <a href="{{route('site.servicos')}}" class="btn btn-primary my-2">Serviços</a>
                         @foreach ($servicos as $servico )

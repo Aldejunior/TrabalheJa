@@ -5,6 +5,7 @@
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <title>Pres | Trabalhe já </title>
     </head>
 
@@ -23,19 +24,19 @@
                     <div class="offcanvas-body">
                       <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="{{route('prestadores.home')}}">Home</a>
+                          <a class="nav-link active" aria-current="page" href="{{route('prestadores.home')}}"><i class="bi bi-house"></i> Home</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{route('prestadores.servicos')}}">Serviços</a>
+                          <a class="nav-link" href="{{route('prestadores.servicos')}}"><i class="bi bi-wrench-adjustable"></i> Serviços</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('prestadores.show', $prestador->id)}}">Perfil</a>
+                            <a class="nav-link" href="{{route('prestadores.show', $prestador->id ) }}"><i class="bi bi-credit-card-2-front"></i> Perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('prestadores.registro', $prestador->id)}}">Registro</a>
+                            <a class="nav-link" href="{{route('prestadores.registro', $prestador->id)}}"><i class="bi bi-pencil"></i> Registro</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="{{route('site.login.logout')}}">Logout</a>
+                            <a class="nav-link" href="{{route('site.login.logout')}}"><i class="bi bi-door-closed"></i> Logout</a>
                           </li>
                       </ul>
                     </div>

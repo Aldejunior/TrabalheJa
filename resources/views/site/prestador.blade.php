@@ -32,6 +32,6 @@
             @endforeach
         </ul>
     </div>
-    <a href="https://wa.me/+55{{ $prestador->telefone }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Contato</button></a>
-    <a href="{{ route('site.servico', $servico->id) }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Voltar</button></a>
+    <a href="https://wa.me/+55{{ $prestador->telefone }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button"><i class="bi bi-whatsapp"></i> Contato</button></a>
+    <a href="{{ route('site.home') }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button"><i class="bi bi-arrow-90deg-left"></i>Voltar</button></a>
 @endsection

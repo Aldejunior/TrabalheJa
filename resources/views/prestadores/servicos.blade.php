@@ -20,5 +20,5 @@
               </div>
 
         @endforeach
-
+        <a href="{{ route('prestadores.home') }}"><button class="w-100 btn btn-lg btn-warning mb-3" type="button">Voltar</button></a>
 @endsection
